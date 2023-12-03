@@ -15,7 +15,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const { className, children, theme, ...otherProps } = props;
 
   return (
-    <button className={classNames(cls.button, {}, [cls[theme]])} {...otherProps}>
+    <button className={classNames(cls.button, {}, [cls[theme], props.className])} {...otherProps}>
       {children}
     </button>
   );
