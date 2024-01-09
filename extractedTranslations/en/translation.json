@@ -1,5 +1,7 @@
 {
   "about site": "",
   "language": "",
-  "main page": ""
+  "loading": "loading",
+  "main page": "",
+  "pageNotFound": "pageNotFound"
 }
