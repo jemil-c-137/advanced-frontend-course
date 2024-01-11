@@ -4,5 +4,7 @@
   "main page": "Main page",
   "language": "English 🇺🇸",
   "loading": "Loading",
-  "pageNotFound": "Page not found"
+  "pageNotFound": "Page not found",
+  "errorBoundaryMessage": "Something went wrong.",
+  "reloadPage": "Reload page"
 }

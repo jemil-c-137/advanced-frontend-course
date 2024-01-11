@@ -4,5 +4,7 @@
   "main page": "Главная страница",
   "language": "Русский",
   "loading": "Загрузка",
-  "pageNotFound": "Страница не найдена"
+  "pageNotFound": "Страница не найдена",
+  "errorBoundaryMessage": "Что-то пошло не так",
+  "reloadPage": "Перезагрузить"
 }

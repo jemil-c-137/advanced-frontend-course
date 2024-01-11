@@ -1,7 +1,9 @@
 {
   "about site": "",
+  "errorBoundaryMessage": "errorBoundaryMessage",
   "language": "",
   "loading": "loading",
   "main page": "",
-  "pageNotFound": "pageNotFound"
+  "pageNotFound": "pageNotFound",
+  "reloadPage": "reloadPage"
 }
