@@ -1,11 +1,18 @@
 .button {
     cursor: pointer;
-    color: var(--color-primary);
+    color: var(--primary-color);
 }
 
 .clear {
     padding: 0;
     border: none;
     outline: none;
+    background: none;
+}
+
+.outline {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background: none;
 }

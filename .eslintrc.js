@@ -4,11 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: [
-        'airbnb',
-        'plugin:react/recommended',
-        'plugin:i18next/recommended',
-    ],
+    extends: ['airbnb', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     overrides: [
         {
@@ -19,6 +15,10 @@ module.exports = {
             parserOptions: {
                 sourceType: 'script',
             },
+        },
+        {
+            files: '**/src/**/*.test.{tsx,ts}',
+            rules: { 'i18next/no-literal-string': 'off' },
         },
     ],
     parserOptions: {
@@ -45,9 +45,10 @@ module.exports = {
         'no-shadow': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
+        'react/jsx-closing-bracket-location': [1, 'after-props'],
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['to'] },
+            { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] },
         ],
         'i18next/jsx-attributes': 'off',
         'max-len': ['error', { ignoreComments: true, code: 120 }],
