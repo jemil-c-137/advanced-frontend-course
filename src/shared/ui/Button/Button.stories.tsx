@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 
 import { Button, ThemeButton } from './Button';
 
@@ -40,4 +42,12 @@ export const Outline: Story = {
         children: 'Text',
         theme: ThemeButton.OUTLINE,
     },
+};
+
+export const OutlineDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
