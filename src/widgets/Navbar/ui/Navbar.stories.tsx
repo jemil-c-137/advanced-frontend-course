@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Sidebar } from './Sidebar';
+import { Navbar } from './Navbar';
 
 const meta = {
-    title: 'widget/Sidebar',
-    component: Sidebar,
+    title: 'widget/Navbar',
+    component: Navbar,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
         layout: 'centered',
@@ -14,10 +14,12 @@ const meta = {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
 
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {};
-export const Dark: Story = { decorators: ThemeDecorator(Theme.DARK) };
+export const Dark: Story = {
+    decorators: ThemeDecorator(Theme.DARK),
+};
