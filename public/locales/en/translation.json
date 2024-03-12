@@ -1,10 +1,11 @@
 {
-  "test": "test example",
-  "translate": "translate",
-  "main page": "Main page",
-  "language": "English 🇺🇸",
-  "loading": "Loading",
-  "pageNotFound": "Page not found",
-  "errorBoundaryMessage": "Something went wrong.",
-  "reloadPage": "Reload page"
+    "test": "test example",
+    "translate": "translate",
+    "main page": "Main page",
+    "language": "English 🇺🇸",
+    "loading": "Loading",
+    "pageNotFound": "Page not found",
+    "errorBoundaryMessage": "Something went wrong.",
+    "reloadPage": "Reload page",
+    "toggle": "toggle"
 }

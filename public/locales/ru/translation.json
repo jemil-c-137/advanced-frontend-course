@@ -1,10 +1,11 @@
 {
-  "test": "тестовый перевод",
-  "translate": "перевод",
-  "main page": "Главная страница",
-  "language": "Русский",
-  "loading": "Загрузка",
-  "pageNotFound": "Страница не найдена",
-  "errorBoundaryMessage": "Что-то пошло не так",
-  "reloadPage": "Перезагрузить"
+    "test": "тестовый перевод",
+    "translate": "перевод",
+    "main page": "Главная страница",
+    "language": "Русский",
+    "loading": "Загрузка",
+    "pageNotFound": "Страница не найдена",
+    "errorBoundaryMessage": "Что-то пошло не так",
+    "reloadPage": "Перезагрузить",
+    "toggle": "переключить"
 }
