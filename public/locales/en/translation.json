@@ -7,5 +7,6 @@
     "pageNotFound": "Page not found",
     "errorBoundaryMessage": "Something went wrong.",
     "reloadPage": "Reload page",
-    "toggle": "toggle"
+    "toggle": "toggle",
+    "shortLanguage": "EN"
 }

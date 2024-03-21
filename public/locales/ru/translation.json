@@ -7,5 +7,6 @@
     "pageNotFound": "Страница не найдена",
     "errorBoundaryMessage": "Что-то пошло не так",
     "reloadPage": "Перезагрузить",
-    "toggle": "переключить"
+    "toggle": "переключить",
+    "shortLanguage": "RU"
 }
