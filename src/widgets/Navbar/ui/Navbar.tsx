@@ -14,8 +14,7 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
 
     return (
         <div className={classNames(cls.navbar)}>
-            <div className={cls.links}>
-            </div>
+            <div className={cls.links} />
         </div>
     );
 }
