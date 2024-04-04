@@ -3,6 +3,7 @@
   "errorBoundaryMessage": "errorBoundaryMessage",
   "language": "",
   "loading": "loading",
+  "login": "login",
   "main page": "",
   "pageNotFound": "pageNotFound",
   "reloadPage": "reloadPage"

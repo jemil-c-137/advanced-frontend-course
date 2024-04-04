@@ -8,5 +8,6 @@
     "errorBoundaryMessage": "Something went wrong.",
     "reloadPage": "Reload page",
     "toggle": "toggle",
-    "shortLanguage": "EN"
+    "shortLanguage": "EN",
+    "login": "Login"
 }

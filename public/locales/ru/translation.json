@@ -8,5 +8,6 @@
     "errorBoundaryMessage": "Что-то пошло не так",
     "reloadPage": "Перезагрузить",
     "toggle": "переключить",
-    "shortLanguage": "RU"
+    "shortLanguage": "RU",
+    "login": "Войти"
 }
