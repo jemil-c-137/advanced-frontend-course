@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Provider } from 'react-redux';
-import { createReduxStore } from '../config/Store';
+import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StoreSchema';
 
 interface StoreProviderProps {
