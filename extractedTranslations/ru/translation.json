@@ -1,4 +1,5 @@
 {
+  "": "",
   "about site": "",
   "errorBoundaryMessage": "errorBoundaryMessage",
   "language": "",
@@ -6,5 +7,7 @@
   "login": "login",
   "main page": "",
   "pageNotFound": "pageNotFound",
-  "reloadPage": "reloadPage"
+  "passwordPlaceholder": "passwordPlaceholder",
+  "reloadPage": "reloadPage",
+  "usernamePlaceholder": "usernamePlaceholder"
 }

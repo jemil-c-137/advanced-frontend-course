@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import {
     FC,
     MouseEvent,
@@ -15,14 +14,17 @@ interface ModalProps {
     isOpen: boolean;
     onClose?: () => void;
     className?: string;
+    lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { children, isOpen, onClose } = props;
-
-    const { theme } = useTheme();
+    const {
+        children, isOpen, onClose, className, lazy,
+    } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const handleClose = useCallback(() => {
@@ -45,8 +47,14 @@ export const Modal: FC<ModalProps> = (props) => {
                 handleClose();
             }
         },
-        [handleClose]
+        [handleClose],
     );
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         if (isOpen) {
@@ -59,14 +67,21 @@ export const Modal: FC<ModalProps> = (props) => {
         };
     }, [isOpen, onKeyDown]);
 
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
             <div
-                className={classNames(cls.modal, {
-                    [cls.open]: isOpen,
-                    [cls.closing]: isClosing,
-                    [cls[theme]]: true,
-                })}>
+                className={classNames(
+                    cls.modal,
+                    {
+                        [cls.open]: isOpen,
+                        [cls.closing]: isClosing,
+                    },
+                    [className],
+                )}>
                 <div className={cls.overlay} onClick={handleClose}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}

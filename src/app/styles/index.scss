@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 .app {
     min-height: 100vh;
     background: var(--bg-color);
@@ -21,9 +26,4 @@
 .page-wrapper {
     flex-grow: 1;
     padding: 20px;
-}
-
-body {
-    font: var(--font-m);
-    color: var(--primary-color);
 }

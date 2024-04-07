@@ -9,5 +9,7 @@
     "reloadPage": "Reload page",
     "toggle": "toggle",
     "shortLanguage": "EN",
-    "login": "Login"
+    "login": "Login",
+    "usernamePlaceholder": "your username",
+    "passwordPlaceholder": "your password"
 }

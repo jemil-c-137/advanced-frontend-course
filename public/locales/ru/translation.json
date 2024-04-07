@@ -9,5 +9,7 @@
     "reloadPage": "Перезагрузить",
     "toggle": "переключить",
     "shortLanguage": "RU",
-    "login": "Войти"
+    "login": "Войти",
+    "usernamePlaceholder": "Ваш логин",
+    "passwordPlaceholder": "Ваш пароль"
 }
