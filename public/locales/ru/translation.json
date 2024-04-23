@@ -10,6 +10,9 @@
     "toggle": "переключить",
     "shortLanguage": "RU",
     "login": "Войти",
+    "logout": "Выйти",
     "usernamePlaceholder": "Ваш логин",
-    "passwordPlaceholder": "Ваш пароль"
+    "passwordPlaceholder": "Ваш пароль",
+    "loginForm": "Форма авторизации",
+    "loginError": "Вы ввели неправильный логин или пароль"
 }

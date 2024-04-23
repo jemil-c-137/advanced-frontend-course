@@ -10,6 +10,9 @@
     "toggle": "toggle",
     "shortLanguage": "EN",
     "login": "Login",
+    "logout": "Logout",
     "usernamePlaceholder": "your username",
-    "passwordPlaceholder": "your password"
+    "passwordPlaceholder": "your password",
+    "loginForm": "Login form",
+    "loginError": "Incorrect login or password"
 }

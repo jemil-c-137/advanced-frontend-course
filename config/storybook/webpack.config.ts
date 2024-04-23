@@ -9,7 +9,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
     // eslint-disable-next-line no-param-reassign
     config.module!.rules = config.module?.rules?.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test)) {
-            console.log('exclude');
             return {
                 ...rule,
                 exclude: /\.svg$/i,
@@ -23,5 +22,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
         use: ['@svgr/webpack'],
     });
     config.module?.rules?.push(buildCssLoader(true));
+    config.plugins?.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: 'true',
+        }),
+    );
     return config;
 };

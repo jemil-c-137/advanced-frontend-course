@@ -5,9 +5,13 @@
   "language": "",
   "loading": "loading",
   "login": "login",
+  "loginForm": "loginForm",
+  "logout": "logout",
   "main page": "",
   "pageNotFound": "pageNotFound",
   "passwordPlaceholder": "passwordPlaceholder",
+  "registrationF": "registrationF",
+  "registrationForm": "registrationForm",
   "reloadPage": "reloadPage",
   "usernamePlaceholder": "usernamePlaceholder"
 }

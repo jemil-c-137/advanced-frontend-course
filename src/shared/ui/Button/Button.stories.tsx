@@ -127,3 +127,21 @@ export const SquareXL: Story = {
         size: ButtonSize.XL,
     },
 };
+
+export const Disabled: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND,
+        square: true,
+        disabled: true,
+    },
+};
+
+export const DisabledInverted: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+        disabled: true,
+    },
+};
