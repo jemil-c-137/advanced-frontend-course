@@ -4,7 +4,7 @@ import { StoryFn } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 
 export const StoreDecorator = (state: DeepPartial<StateSchema>) => (StoryComponent: StoryFn) => (
-    <StoreProvider initialState={state}>
+    <StoreProvider initialState={state as StateSchema}>
         <StoryComponent />
     </StoreProvider>
 );
