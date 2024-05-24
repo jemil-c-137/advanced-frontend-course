@@ -7,7 +7,7 @@ import {
 import { ReducerManager, StateSchema, StateSchemaKey } from './StoreSchema';
 
 export function createReducerManager(
-    initialReducers: ReducersMapObject<StateSchema>
+    initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
     const reducers = { ...initialReducers };
 
@@ -45,8 +45,6 @@ export function createReducerManager(
             }
 
             delete reducers[key];
-
-            console.log('removed key', reducers);
 
             keysToRemove.push(key);
 
