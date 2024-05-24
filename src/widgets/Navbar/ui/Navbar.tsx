@@ -55,7 +55,7 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
                 {t('login')}
             </Button>
 
-            <LoginModal isOpen={isAuthMode} onClose={onCloseModal} />
+            {isAuthMode && <LoginModal isOpen={isAuthMode} onClose={onCloseModal} />}
         </div>
     );
 }
