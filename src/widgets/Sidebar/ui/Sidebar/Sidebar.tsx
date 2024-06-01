@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState, type FC } from 'react';
+import { memo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
@@ -8,13 +8,15 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLInk/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import HomeIcon from 'shared/assets/icons/home.svg';
+import { sidebarItemsList } from 'widgets/Sidebar/model/item';
 import cls from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar = memo((props: SidebarProps) => {
     const { className } = props;
     const [collapsed, setCollapsed] = useState(false);
     const { t } = useTranslation();
@@ -38,6 +40,13 @@ export const Sidebar: FC<SidebarProps> = (props) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={cls.items}>
+                {sidebarItemsList.map((item) => (
+                    <SidebarItem
+                        key={item.path}
+                        item={item}
+                        collapsed={collapsed}
+                    />
+                ))}
                 <div className={cls.item}>
                     <AppLink
                         theme={AppLinkTheme.SECONDARY}
@@ -63,4 +72,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             </div>
         </div>
     );
-};
+});
+
+Sidebar.displayName = 'Sidebar';

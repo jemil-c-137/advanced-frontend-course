@@ -9,12 +9,19 @@
     ],
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "username": "admin",
             "password": "123"
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "typicode",
+        "lastname": "react",
+        "age": 22,
+        "currency": "euro",
+        "country": "germany",
+        "city": "paris",
+        "username": "admin",
+        "avatar": "avatar"
     }
 }

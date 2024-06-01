@@ -1,4 +1,6 @@
-import { PropsWithChildren, useCallback, useState } from 'react';
+import {
+    memo, PropsWithChildren, useCallback, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
@@ -11,7 +13,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export function Navbar(props: PropsWithChildren<NavbarProps>) {
+export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
     const { className } = props;
     const { t } = useTranslation();
 
@@ -55,7 +57,11 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
                 {t('login')}
             </Button>
 
-            {isAuthMode && <LoginModal isOpen={isAuthMode} onClose={onCloseModal} />}
+            {isAuthMode && (
+                <LoginModal isOpen={isAuthMode} onClose={onCloseModal} />
+            )}
         </div>
     );
-}
+});
+
+Navbar.displayName = 'Navbar';
