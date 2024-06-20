@@ -15,7 +15,6 @@ export const loginByUserName = createAsyncThunk<
 >('login/fetchByIdStatus', async (authData, thunkApi) => {
     const { dispatch, extra, rejectWithValue } = thunkApi;
     try {
-        // @ts-ignore
         const response = await extra.api.post(
             '/login',
             authData,

@@ -42,8 +42,10 @@ export const Button = memo((props: ButtonProps) => {
             className={classNames(
                 cls.button,
                 {
-                    [cls.square]: square, [cls.disabled]: disabled, [cls.theme]: theme, [cls.size]: size,
+                    [cls.square]: square,
+                    [cls.disabled]: disabled,
                 },
+                [theme, size],
             )}
             {...otherProps}>
             {children}
