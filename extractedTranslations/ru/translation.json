@@ -10,8 +10,12 @@
   "main page": "",
   "pageNotFound": "pageNotFound",
   "passwordPlaceholder": "passwordPlaceholder",
+  "profile": "profile",
+  "profileEdit": "profileEdit",
   "registrationF": "registrationF",
   "registrationForm": "registrationForm",
   "reloadPage": "reloadPage",
-  "usernamePlaceholder": "usernamePlaceholder"
+  "usernamePlaceholder": "usernamePlaceholder",
+  "yourLastName": "yourLastName",
+  "yourName": "yourName"
 }

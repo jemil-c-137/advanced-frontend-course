@@ -14,5 +14,7 @@
     "usernamePlaceholder": "your username",
     "passwordPlaceholder": "your password",
     "loginForm": "Login form",
-    "loginError": "Incorrect login or password"
+    "loginError": "Incorrect login or password",
+    "profile": "Profile",
+    "profileEdit": "Edit profile"
 }

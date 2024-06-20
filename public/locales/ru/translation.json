@@ -14,5 +14,7 @@
     "usernamePlaceholder": "Ваш логин",
     "passwordPlaceholder": "Ваш пароль",
     "loginForm": "Форма авторизации",
-    "loginError": "Вы ввели неправильный логин или пароль"
+    "loginError": "Вы ввели неправильный логин или пароль",
+    "profile": "Профиль",
+    "profileEdit": "Редактировать профиль"
 }

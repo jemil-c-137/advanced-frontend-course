@@ -33,15 +33,17 @@ export const Input = memo((props: InputProps) => {
     const [caretPosition, setCaretPosition] = useState(0);
 
     useEffect(() => {
-        if (autofocus) {
+        if (autofocus && ref.current) {
             setIsFocused(true);
             ref.current.focus();
         }
     }, [autofocus]);
 
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(e.target.value);
-        setCaretPosition(e.target.value.length);
+        if (onChange) {
+            onChange(e.target.value);
+            setCaretPosition(e.target.value.length);
+        }
     };
 
     const onBlur = () => {
