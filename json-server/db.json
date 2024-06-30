@@ -1,27 +1,43 @@
 {
-    "posts": [
-        { "id": "1", "title": "a title", "views": 100 },
-        { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-        { "id": "1", "text": "a comment about post 1", "postId": "1" },
-        { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": {
-        "first": "typicode",
-        "lastname": "react",
-        "age": 22,
-        "currency": "euro",
-        "country": "germany",
-        "city": "paris",
-        "username": "admin",
-        "avatar": "avatar"
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Save",
+    "lastname": "Nerw",
+    "age": 22,
+    "currency": "euro",
+    "country": "germany",
+    "city": "paris1111",
+    "username": "admin",
+    "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png"
+  }
 }

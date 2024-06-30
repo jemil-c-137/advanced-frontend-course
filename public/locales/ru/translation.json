@@ -13,8 +13,16 @@
     "logout": "Выйти",
     "usernamePlaceholder": "Ваш логин",
     "passwordPlaceholder": "Ваш пароль",
+    "avatarPlaceholder": "Ваш аватар",
+    "cityPlaceholder": "Ваш город",
+    "firstNamePlaceholder": "Ваше имя",
+    "lastNamePlaceholder": "Ваша фамилия",
+    "agePlaceholder": "Ваш возраст",
     "loginForm": "Форма авторизации",
     "loginError": "Вы ввели неправильный логин или пароль",
     "profile": "Профиль",
-    "profileEdit": "Редактировать профиль"
+    "profileEdit": "Редактировать профиль",
+    "cancel": "Отменить",
+    "save": "Сохранить",
+    "currency": "Валюта"
 }
