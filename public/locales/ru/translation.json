@@ -24,5 +24,9 @@
     "profileEdit": "Редактировать профиль",
     "cancel": "Отменить",
     "save": "Сохранить",
-    "currency": "Валюта"
+    "currency": "Валюта",
+    "noDataError": "У юзера нет данных",
+    "serverError": "Ошибка на сервере",
+    "ageError": "Ошибка возраста",
+    "countryError": "Ошибка страны"
 }

@@ -2,6 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Country } from '../../../entities/Country';
+import { Currency } from '../../../entities/Currency';
 import ProfilePage from './ProfilePage';
 
 const meta = {
@@ -22,17 +24,58 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-    decorators: StoreDecorator({
+export const Normal: Story = {
+    decorators: [StoreDecorator({
         profile: {
-            data: {}, isLoading: false, error: 'error', readonly: true,
-        },
-    }),
-};
-export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-        profile: {
-            data: {}, isLoading: false, error: 'error', readonly: true,
+            data: {
+                first: 'name',
+                lastname: 'lastname',
+                age: 22,
+                currency: Currency.EUR,
+                city: 'city',
+                avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                country: Country.Italy,
+                username: 'username',
+            },
+            form: {
+                first: 'name',
+                lastname: 'lastname',
+                age: 22,
+                currency: Currency.EUR,
+                city: 'city',
+                avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                country: Country.Italy,
+                username: 'username',
+            },
+            readonly: true,
         },
     })],
+};
+
+export const Dark: Story = {
+    decorators: [StoreDecorator({
+        profile: {
+            data: {
+                first: 'name',
+                lastname: 'lastname',
+                age: 22,
+                currency: Currency.EUR,
+                city: 'city',
+                avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                country: Country.Italy,
+                username: 'username',
+            },
+            form: {
+                first: 'name',
+                lastname: 'lastname',
+                age: 22,
+                currency: Currency.EUR,
+                city: 'city',
+                avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                country: Country.Italy,
+                username: 'username',
+            },
+            readonly: true,
+        },
+    }), ThemeDecorator(Theme.DARK)],
 };

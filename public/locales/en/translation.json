@@ -24,5 +24,9 @@
     "profileEdit": "Edit profile",
     "cancel": "Cancel",
     "save": "Save",
-    "currency": "Currency"
+    "currency": "Currency",
+    "noDataError": "No user data",
+    "serverError": "Error on server side",
+    "ageError": "No age",
+    "countryError": "Country error"
 }

@@ -3,11 +3,12 @@ import { Profile, ProfileSchema } from './model/types/profile';
 import { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 import { ProfileCard } from './ui/ProfileCard/ProfileCard';
-import { getProfileData } from './model/selectors/getprofileData';
-import { getProfileIsLoading } from './model/selectors/getProfileIsLoading';
-import { getProfileError } from './model/selectors/getProfileError';
-import { getProfileReadonly } from './model/selectors/getProfileReadonly';
-import { getProfileForm } from './model/selectors/getProfileForm';
+import { getProfileData } from './model/selectors/getProfileData/getProfileData';
+import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileError } from './model/selectors/getProfileError/getProfileError';
+import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+import { getProfileValidateErrors } from './model/selectors/getProfileValidationErrors/getProfileValidateError';
 
 export {
     profileReducer,
@@ -22,4 +23,5 @@ export {
     getProfileIsLoading,
     getProfileReadonly,
     getProfileForm,
+    getProfileValidateErrors,
 };
