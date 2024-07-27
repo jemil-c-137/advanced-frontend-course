@@ -4,8 +4,8 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 
@@ -13,6 +13,8 @@ export function App() {
     const { theme } = useTheme();
 
     const dispatch = useDispatch();
+
+    const isInited = useSelector(getUserInited);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -25,7 +27,7 @@ export function App() {
                 <div className="content-page">
                     <Sidebar />
 
-                    <AppRouter />
+                    {isInited && <AppRouter />}
                 </div>
             </Suspense>
         </div>
