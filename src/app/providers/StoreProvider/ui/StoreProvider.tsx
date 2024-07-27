@@ -6,7 +6,7 @@ import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StoreSchema';
 
 interface StoreProviderProps {
-    initialState?: StateSchema;
+    initialState?: DeepPartial<StateSchema>;
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
@@ -16,7 +16,7 @@ export const StoreProvider: FC<StoreProviderProps> = ({
     asyncReducers,
 }) => {
     const navigate = useNavigate();
-    const store = createReduxStore(initialState, asyncReducers as ReducersMapObject, navigate);
+    const store = createReduxStore(initialState as StateSchema, asyncReducers as ReducersMapObject, navigate);
 
     return <Provider store={store}>{children}</Provider>;
 };

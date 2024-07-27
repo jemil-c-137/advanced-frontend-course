@@ -1,5 +1,6 @@
 import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
+
 export interface Profile {
     first?: string;
     lastname?: string;
@@ -18,7 +19,6 @@ export enum ValidateProfileError {
     NO_DATA = 'NO_DATA',
     SERVER_ERROR = 'SERVER_ERROR'
 }
-
 
 export interface ProfileSchema {
     data?: Profile;
