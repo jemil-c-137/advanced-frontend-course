@@ -47,24 +47,6 @@ export const Sidebar = memo((props: SidebarProps) => {
                         collapsed={collapsed}
                     />
                 ))}
-                <div className={cls.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.main}
-                        className={cls.link}>
-                        <HomeIcon className={cls.icon} />
-                        {!collapsed && t('main page')}
-                    </AppLink>
-                </div>
-                <div className={cls.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        className={cls.link}
-                        to={RoutePath.about}>
-                        <AboutIcon className={cls.icon} />
-                        {!collapsed && t('about site')}
-                    </AppLink>
-                </div>
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
