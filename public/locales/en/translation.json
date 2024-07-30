@@ -28,5 +28,6 @@
     "noDataError": "No user data",
     "serverError": "Error on server side",
     "ageError": "No age",
-    "countryError": "Country error"
+    "countryError": "Country error",
+    "commentsTitle": "Comments"
 }

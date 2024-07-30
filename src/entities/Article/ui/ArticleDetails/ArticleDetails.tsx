@@ -38,8 +38,12 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
     const article = useSelector(getArticleDetailsData);
 
+    console.log(article, 'article');
+
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
     }, [dispatch, id]);
 
     const renderBlock = useCallback((block: ArticleBlock) => {

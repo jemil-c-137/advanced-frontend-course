@@ -28,5 +28,6 @@
     "noDataError": "У юзера нет данных",
     "serverError": "Ошибка на сервере",
     "ageError": "Ошибка возраста",
-    "countryError": "Ошибка страны"
+    "countryError": "Ошибка страны",
+    "commentsTitle": "Коментарии"
 }
