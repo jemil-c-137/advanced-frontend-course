@@ -115,14 +115,28 @@
       "rolse": "USER"
     }
   ],
-  "profile": {
-    "first": "Savewww",
-    "lastname": "Nerwwwww",
-    "age": 12,
-    "currency": "euro",
-    "country": "germany",
-    "city": "paris11112222",
-    "username": "admin",
-    "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Savewww",
+      "lastname": "Nerwwwww",
+      "age": 12,
+      "currency": "euro",
+      "country": "germany",
+      "city": "paris11112222",
+      "username": "admin",
+      "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png"
+    },
+    {
+      "id": "2",
+      "first": "Naruto",
+      "lastname": "Uzumake",
+      "age": 22,
+      "currency": "euro",
+      "country": "ukraine",
+      "city": "kanoha",
+      "username": "user",
+      "avatar": "https://static.wikia.nocookie.net/denaruto3/images/9/9f/Smallnaruto.png"
+    }
+  ]
 }

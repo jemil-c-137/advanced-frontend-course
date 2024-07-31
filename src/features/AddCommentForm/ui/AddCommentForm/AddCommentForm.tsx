@@ -1,0 +1,47 @@
+import {
+    getAddCommentFormText,
+    getAddCommentFormError,
+} from 'features/AddCommentForm/model/selectors/addCommentFormSelectors';
+import { addCommentFormActions, addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Input } from 'shared/ui/Input/Input';
+import cls from './AddCommentForm.module.scss';
+
+const reducer: ReducerList = {
+    addCommentForm: addCommentFormReducer,
+};
+
+const AddCommentForm = memo(() => {
+    const { t } = useTranslation();
+    const text = useSelector(getAddCommentFormText);
+    const error = useSelector(getAddCommentFormError);
+    const dispatch = useAppDispatch();
+
+    const onCommentTextChange = useCallback((value: string) => {
+        dispatch(addCommentFormActions.setText(value));
+    }, [dispatch]);
+
+    if (error) {
+        return <div>{t('serverError')}</div>;
+    }
+
+    return (
+        <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
+            <div className={cls.addCommentForm}>
+                <Input placeholder={t('addCommentText')} value={text} onChange={onCommentTextChange} />
+                <Button theme={ButtonTheme.OUTLINE}>
+                    {t('sendComment')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
+    );
+});
+
+AddCommentForm.displayName = 'AddCommentForm';
+
+export default AddCommentForm;

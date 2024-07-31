@@ -29,5 +29,7 @@
     "serverError": "Error on server side",
     "ageError": "No age",
     "countryError": "Country error",
-    "commentsTitle": "Comments"
+    "commentsTitle": "Comments",
+    "addCommentText": "Add comment text",
+    "sendComment": "Send comment"
 }

@@ -6,6 +6,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { AddCommentForm } from 'features/AddCommentForm';
 import { ArticleDetails } from '../../../entities/Article';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -41,6 +42,7 @@ const ArticleDetailsPage = () => {
             <div className={cls.articleDetailsPage}>
                 <ArticleDetails id={id} />
                 <Text title={t('commentsTitle')} className={cls.commentsTitle} />
+                <AddCommentForm />
                 <CommentList
                     comments={comments}
                     isLoading={!!isLoading} />

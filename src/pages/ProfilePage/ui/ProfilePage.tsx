@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -6,6 +6,8 @@ import {
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ValidateProfileError } from '../../../entities/Profile/model/types/profile';
 import { Currency } from '../../../entities/Currency';
 import { Country } from '../../../entities/Country';
@@ -30,6 +32,7 @@ const ProfilePage = () => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
+    const { id } = useParams<{id: string}>();
     const form = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
@@ -44,11 +47,11 @@ const ProfilePage = () => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t('countryError'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onFirstNameChange = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value }));

@@ -29,5 +29,7 @@
     "serverError": "Ошибка на сервере",
     "ageError": "Ошибка возраста",
     "countryError": "Ошибка страны",
-    "commentsTitle": "Коментарии"
+    "commentsTitle": "Коментарии",
+    "addCommentText": "Добавьте тект комментария",
+    "sendComment": "Отправить комментарий"
 }
