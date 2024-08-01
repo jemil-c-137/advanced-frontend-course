@@ -1,21 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StoreSchema';
 import { getArticleDetailsData } from 'entities/Article';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { getUserAuthData } from '../../../../../entities/User';
-import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const sendComment = createAsyncThunk<
+export const addCommentForArticle = createAsyncThunk<
     Comment,
-    void,
+    string,
     ThunkConfig<string>
->('addCommentForm/sendComment', async (authData, thunkApi) => {
+>('articleDetails/addCommentForArticle', async (text, thunkApi) => {
     const {
         dispatch, extra, rejectWithValue, getState,
     } = thunkApi;
 
     const userData = getUserAuthData(getState());
-    const text = getAddCommentFormText(getState());
     const article = getArticleDetailsData(getState());
 
     if (!userData || !text || !article) {
@@ -36,11 +34,7 @@ export const sendComment = createAsyncThunk<
             throw new Error();
         }
 
-        localStorage.setItem(
-            USER_LOCALSTORAGE_KEY,
-            JSON.stringify(response.data),
-        );
-        // dispatch(userActions.setAuthData(response.data));
+        dispatch(fetchCommentsByArticleId(article!.id));
 
         return response.data;
     } catch (error) {

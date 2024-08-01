@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { CommentList } from 'entities/Comment';
 import { Text } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -12,6 +12,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading, getArticleDetailsCommentsError } from '../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../model/service/addCommentForArticle/addCommentForArticle';
 
 const reducers: ReducerList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -29,6 +30,10 @@ const ArticleDetailsPage = () => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     if (!id) {
         return (
             <div>
@@ -42,7 +47,7 @@ const ArticleDetailsPage = () => {
             <div className={cls.articleDetailsPage}>
                 <ArticleDetails id={id} />
                 <Text title={t('commentsTitle')} className={cls.commentsTitle} />
-                <AddCommentForm />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     comments={comments}
                     isLoading={!!isLoading} />

@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -96,6 +98,30 @@
       "postId": "1",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "comment",
+      "id": "0OXyRM1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "naruto is here",
+      "id": "V-8-UF1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "new commed added",
+      "id": "w6XQB8e"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "very new comment added bny me",
+      "id": "ig_5Tcq"
     }
   ],
   "users": [
@@ -105,7 +131,6 @@
       "password": "123",
       "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
       "role": "ADMIN"
-      
     },
     {
       "id": "2",
@@ -131,7 +156,7 @@
       "id": "2",
       "first": "Naruto",
       "lastname": "Uzumake",
-      "age": 22,
+      "age": 26,
       "currency": "euro",
       "country": "ukraine",
       "city": "kanoha",

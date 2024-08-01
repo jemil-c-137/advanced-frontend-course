@@ -16,7 +16,11 @@ const reducer: ReducerList = {
     addCommentForm: addCommentFormReducer,
 };
 
-const AddCommentForm = memo(() => {
+interface AddCommentFormProps {
+    onSendComment: (text: string) => void
+}
+
+const AddCommentForm = memo(({ onSendComment }: AddCommentFormProps) => {
     const { t } = useTranslation();
     const text = useSelector(getAddCommentFormText);
     const error = useSelector(getAddCommentFormError);
@@ -26,6 +30,11 @@ const AddCommentForm = memo(() => {
         dispatch(addCommentFormActions.setText(value));
     }, [dispatch]);
 
+    const onSendHandler = useCallback(() => {
+        onSendComment(text);
+        onCommentTextChange('');
+    }, [onCommentTextChange, onSendComment, text]);
+
     if (error) {
         return <div>{t('serverError')}</div>;
     }
@@ -34,7 +43,7 @@ const AddCommentForm = memo(() => {
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <div className={cls.addCommentForm}>
                 <Input placeholder={t('addCommentText')} value={text} onChange={onCommentTextChange} />
-                <Button theme={ButtonTheme.OUTLINE}>
+                <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>
                     {t('sendComment')}
                 </Button>
             </div>
