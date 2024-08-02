@@ -9,6 +9,11 @@ interface ArticleBlockBase {
     type: ArticleBlockType
 }
 
+export enum ArticleView {
+    LIST = 'LIST',
+    GRID = 'GRID',
+}
+
 export interface ArticleCodeBlock extends ArticleBlockBase {
     type: ArticleBlockType.CODE
     code: string;

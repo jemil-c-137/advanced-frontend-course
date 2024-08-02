@@ -13,6 +13,16 @@ interface CommentListProps {
 export const CommentList = memo(({ comments, isLoading }: CommentListProps) => {
     const { t } = useTranslation();
 
+    if (isLoading) {
+        return (
+            <div>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
+    }
+
     return (
         <div>
             {comments.length ? comments.map((comment) => (

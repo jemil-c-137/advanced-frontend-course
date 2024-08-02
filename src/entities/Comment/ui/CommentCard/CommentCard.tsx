@@ -9,16 +9,16 @@ import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
-    comment: Comment;
+    comment?: Comment;
     className?: string;
     isLoading: boolean;
 }
 
 export const CommentCard = memo(
     ({ comment, className, isLoading }: CommentCardProps) => {
-        if (isLoading) {
+        if (isLoading || !comment) {
             return (
-                <div className={classNames(cls.commentCard, {}, [className])}>
+                <div className={classNames(cls.commentCard, {}, [className, cls.loading])}>
                     <div className={cls.header}>
                         <Skeleton width={30} height={30} border="50%" className={cls.avatar} />
                         <Skeleton width={100} height={16} className={cls.username} />
