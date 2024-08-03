@@ -1,4 +1,6 @@
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
+import { ArticleListItemSkeleton } from '../ArticlesListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticlesListItem/ArticlesListItem';
 
 import cls from './ArticlesList.module.scss';
@@ -7,16 +9,36 @@ interface ArticlesListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    className?: string;
 }
 
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3).fill(0).map((i, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+));
+
 export const ArticlesList = ({
-    articles, isLoading, view = ArticleView.GRID,
+    articles, isLoading, view = ArticleView.GRID, className,
 }: ArticlesListProps) => {
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
+                {getSkeletons(view)}
+            </div>
+        );
+    }
+
     const renderArticle = (article: Article) => (
-        <ArticleListItem article={article} view={view} />
+        <ArticleListItem
+            key={article.id}
+            className={cls.card}
+            article={article}
+            view={view} />
     );
 
     return (
-        <div className={cls.articlesList}>{articles.length ? articles.map(renderArticle) : null}</div>
+        <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
+            {articles.length ? articles.map(renderArticle) : null}
+        </div>
     );
 };

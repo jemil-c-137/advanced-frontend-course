@@ -31,5 +31,7 @@
     "countryError": "Ошибка страны",
     "commentsTitle": "Коментарии",
     "addCommentText": "Добавьте тект комментария",
-    "sendComment": "Отправить комментарий"
+    "sendComment": "Отправить комментарий",
+    "readMore": "Read more",
+    "toArticlesList": "Назад ко всем статьям"
 }

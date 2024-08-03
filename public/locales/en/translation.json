@@ -31,5 +31,7 @@
     "countryError": "Country error",
     "commentsTitle": "Comments",
     "addCommentText": "Add comment text",
-    "sendComment": "Send comment"
+    "sendComment": "Send comment",
+    "readMore": "Read more",
+    "toArticlesList": "Back to all articles"
 }

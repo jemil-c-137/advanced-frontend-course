@@ -11,8 +11,16 @@ const mokc = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'User',
+        avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+    },
     type: [
         'IT',
+        'SCIENCE',
+        'ECONOMICS',
+        'POLITICS',
     ],
     blocks: [
         {
@@ -81,7 +89,12 @@ const ArticlesPage = () => {
 
     return (
         <div className={cls.articlesPage}>
-            <ArticlesList articles={[mokc]} view={ArticleView.GRID} />
+            <ArticlesList
+                articles={new Array(16).fill(0).map((item, index) => ({
+                    ...mokc,
+                    id: `${index}`,
+                }))}
+                view={ArticleView.LIST} />
         </div>
     );
 };
