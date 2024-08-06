@@ -9,3 +9,4 @@ export {
     getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';
 export { ArticlesList } from './ui/ArticlesList/ArticlesList';
+export { ArticlesViewSelector } from './ui/ArticlesViewSelector/ArticlesViewSelector';

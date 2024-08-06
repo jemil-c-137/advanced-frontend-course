@@ -20,14 +20,6 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID 
 export const ArticlesList = ({
     articles, isLoading, view = ArticleView.GRID, className,
 }: ArticlesListProps) => {
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem
             key={article.id}
@@ -39,6 +31,7 @@ export const ArticlesList = ({
     return (
         <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
             {articles.length ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

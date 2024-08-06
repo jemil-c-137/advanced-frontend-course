@@ -9,6 +9,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { ArticleDetails } from '../../../entities/Article';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -43,15 +44,15 @@ const ArticleDetailsPage = () => {
 
     if (!id) {
         return (
-            <div>
+            <Page>
                 {t('noDataError')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={cls.articleDetailsPage}>
+            <Page className={cls.articleDetailsPage}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={backToList}>
                     {t('toArticlesList')}
                 </Button>
@@ -61,7 +62,7 @@ const ArticleDetailsPage = () => {
                 <CommentList
                     comments={comments}
                     isLoading={!!isLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
