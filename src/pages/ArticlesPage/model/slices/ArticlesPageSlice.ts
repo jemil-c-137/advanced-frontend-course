@@ -17,6 +17,7 @@ const initialState = {
     ids: [],
     entities: {
     },
+    _inited: false,
 };
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -42,6 +43,7 @@ const articlesPageSlice = createSlice({
         initView: (state) => {
             state.view = (localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView) || ArticleView.LIST;
             state.limit = state.view === ArticleView.LIST ? 4 : 9;
+            state._inited = true;
         },
     },
     extraReducers: (builder) => {

@@ -26,10 +26,13 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const reducersList = Object.entries(reducers);
 
     useEffect(() => {
-        reducersList.forEach((reducerItem) => {
-            const [reducerKey, reducer] = reducerItem;
-            store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
-            dispatch({ type: `init ${reducerKey}` });
+        const mountedReducers = store.reducerManager.gotMountedReducers();
+        reducersList.forEach(([reducerKey, reducer]) => {
+            const mounted = mountedReducers[reducerKey as StateSchemaKey];
+            if (!mounted) {
+                store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
+                dispatch({ type: `init ${reducerKey}` });
+            }
         });
 
         return () => {
