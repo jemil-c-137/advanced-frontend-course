@@ -8,7 +8,7 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { ValidateProfileError } from '../../../entities/Profile/model/types/profile';
 import { Currency } from '../../../entities/Currency';
 import { Country } from '../../../entities/Country';
