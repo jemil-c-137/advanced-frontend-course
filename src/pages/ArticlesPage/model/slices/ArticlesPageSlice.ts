@@ -5,20 +5,11 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article';
+import { ArticlesSortField } from 'entities/Article/model/types/article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
-
-const initialState = {
-    isLoading: false,
-    view: ArticleView.GRID,
-    page: 1,
-    hasMore: true,
-    ids: [],
-    entities: {
-    },
-    _inited: false,
-};
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article: Article) => article.id,
@@ -31,7 +22,19 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 
 const articlesPageSlice = createSlice({
     name: 'articlesPageSlice',
-    initialState: articlesAdapter.getInitialState<ArticlesPageSchema>(initialState),
+    initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
+        isLoading: false,
+        view: ArticleView.GRID,
+        page: 1,
+        hasMore: true,
+        ids: [],
+        entities: {
+        },
+        _inited: false,
+        search: '',
+        order: 'asc',
+        sort: ArticlesSortField.CREATED,
+    }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
@@ -39,6 +42,15 @@ const articlesPageSlice = createSlice({
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
+        },
+        setOrder: (state, action: PayloadAction<SortOrder>) => {
+            state.order = action.payload;
+        },
+        setSort: (state, action: PayloadAction<ArticlesSortField>) => {
+            state.sort = action.payload;
+        },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
         },
         initView: (state) => {
             state.view = (localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView) || ArticleView.LIST;

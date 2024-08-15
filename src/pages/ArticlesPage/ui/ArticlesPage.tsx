@@ -34,14 +34,9 @@ const ArticlesPage = () => {
         dispatch(initArticlesPage());
     });
 
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page onScrollBottom={onLoadNextPart} className={cls.articlesPage}>
-                <ArticlesViewSelector view={view} onViewClick={onChangeView} />
                 <ArticlesList
                     isLoading={isLoading}
                     articles={articles}
