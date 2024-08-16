@@ -33,5 +33,13 @@
     "addCommentText": "Add comment text",
     "sendComment": "Send comment",
     "readMore": "Read more",
-    "toArticlesList": "Back to all articles"
+    "toArticlesList": "Back to all articles",
+    "sortBy": "Sort by",
+    "orderBy": "Order by",
+    "search": "Search",
+    "decreasing": "decreasing",
+    "increasing": "increasing",
+    "creationDate": "creation date",
+    "byViews": "views",
+    "byTitle": "title"
 }

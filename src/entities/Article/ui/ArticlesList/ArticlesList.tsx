@@ -14,7 +14,7 @@ interface ArticlesListProps {
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3).fill(0).map((i, index) => (
     // eslint-disable-next-line react/no-array-index-key
-    <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    <ArticleListItemSkeleton key={index} view={view} />
 ));
 
 export const ArticlesList = ({
@@ -23,7 +23,6 @@ export const ArticlesList = ({
     const renderArticle = (article: Article) => (
         <ArticleListItem
             key={article.id}
-            className={cls.card}
             article={article}
             view={view} />
     );

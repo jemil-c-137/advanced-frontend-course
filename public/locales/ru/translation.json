@@ -33,5 +33,13 @@
     "addCommentText": "Добавьте тект комментария",
     "sendComment": "Отправить комментарий",
     "readMore": "Read more",
-    "toArticlesList": "Назад ко всем статьям"
+    "toArticlesList": "Назад ко всем статьям",
+    "sortBy": "Сортировать по",
+    "orderBy": "Упорядочить по",
+    "search": "Искать",
+    "decreasing": "убыванию",
+    "increasing": "возрастанию",
+    "creationDate": "дате создания",
+    "byViews": "просмотрам",
+    "byTitle": "названию"
 }

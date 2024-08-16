@@ -14,6 +14,7 @@ import {
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/ArticlesPageSlice';
+import { ArticlePageFilters } from './ArticlePageFilters/ArticlePageFilters';
 import cls from './ArticlesPage.module.scss';
 
 const reducers: ReducerList = {
@@ -37,7 +38,9 @@ const ArticlesPage = () => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page onScrollBottom={onLoadNextPart} className={cls.articlesPage}>
+                <ArticlePageFilters />
                 <ArticlesList
+                    className={cls.list}
                     isLoading={isLoading}
                     articles={articles}
                     view={view || ArticleView.GRID} />
