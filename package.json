@@ -120,5 +120,8 @@
                 "preset": "iPhone 7"
             }
         }
+    },
+    "jest":{
+        "testEnvironment": "jsdom"
     }
 }

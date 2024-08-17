@@ -1,5 +1,6 @@
 import { ArticlesSortField, ArticlesViewSelector, ArticleView } from 'entities/Article';
 import { ArticleSortSelector } from 'entities/Article/';
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import {
     getArticlesPageSort,
     getArticlesPageView,
@@ -8,7 +9,7 @@ import {
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -18,7 +19,7 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import cls from './ArticlePageFilters.module.scss';
 
-export const ArticlePageFilters = () => {
+export const ArticlePageFilters = memo(() => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);
@@ -65,6 +66,9 @@ export const ArticlePageFilters = () => {
             <Card className={cls.search}>
                 <Input value={search} onChange={onChangeSearch} placeholder={t('search')} />
             </Card>
+            <ArticleTypeTabs />
         </div>
     );
-};
+});
+
+ArticlePageFilters.displayName = 'ArticlePageFilters';

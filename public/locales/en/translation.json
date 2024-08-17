@@ -30,6 +30,7 @@
     "ageError": "No age",
     "countryError": "Country error",
     "commentsTitle": "Comments",
+    "recommendationsTitle": "Recommendations",
     "addCommentText": "Add comment text",
     "sendComment": "Send comment",
     "readMore": "Read more",
@@ -41,5 +42,9 @@
     "increasing": "increasing",
     "creationDate": "creation date",
     "byViews": "views",
-    "byTitle": "title"
+    "byTitle": "title",
+    "all": "All",
+    "it": "IT",
+    "economics": "Economics",
+    "science": "Science"
 }

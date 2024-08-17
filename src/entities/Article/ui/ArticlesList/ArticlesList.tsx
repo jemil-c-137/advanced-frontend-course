@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItemSkeleton } from '../ArticlesListItem/ArticleListItemSkeleton';
@@ -20,6 +21,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID 
 export const ArticlesList = ({
     articles, isLoading, view = ArticleView.GRID, className,
 }: ArticlesListProps) => {
+    const { t } = useTranslation();
     const renderArticle = (article: Article) => (
         <ArticleListItem
             key={article.id}
@@ -27,8 +29,16 @@ export const ArticlesList = ({
             view={view} />
     );
 
+    if (!isLoading && !articles.length) {
+        return (
+            <div>
+                {t('noDataError')}
+            </div>
+        );
+    }
+
     return (
-        <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
+        <div className={classNames(cls.articlesList, {}, [cls[view], className])}>
             {articles.length ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>

@@ -30,6 +30,7 @@
     "ageError": "Ошибка возраста",
     "countryError": "Ошибка страны",
     "commentsTitle": "Коментарии",
+    "recommendationsTitle": "Рекомендации",
     "addCommentText": "Добавьте тект комментария",
     "sendComment": "Отправить комментарий",
     "readMore": "Read more",
@@ -41,5 +42,9 @@
     "increasing": "возрастанию",
     "creationDate": "дате создания",
     "byViews": "просмотрам",
-    "byTitle": "названию"
+    "byTitle": "названию",
+    "all": "Все",
+    "it": "IT",
+    "economics": "Экономика",
+    "science": "Наука"
 }
