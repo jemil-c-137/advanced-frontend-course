@@ -1,3 +1,4 @@
+import { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
@@ -11,6 +12,7 @@ interface ArticlesListProps {
     isLoading?: boolean;
     view?: ArticleView;
     className?: string;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3).fill(0).map((i, index) => (
@@ -19,11 +21,16 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID 
 ));
 
 export const ArticlesList = ({
-    articles, isLoading, view = ArticleView.GRID, className,
+    articles,
+    isLoading,
+    view = ArticleView.GRID,
+    className,
+    target,
 }: ArticlesListProps) => {
     const { t } = useTranslation();
     const renderArticle = (article: Article) => (
         <ArticleListItem
+            target={target}
             key={article.id}
             article={article}
             view={view} />

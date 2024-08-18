@@ -70,6 +70,8 @@ const ArticleDetailsPage = () => {
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} title={t('recommendationsTitle')} className={cls.commentsTitle} />
                 <ArticlesList
+                    // eslint-disable-next-line i18next/no-literal-string
+                    target="_blank"
                     articles={recommendations}
                     isLoading={recommendationsIsLoading}
                     className={cls.recommendations} />

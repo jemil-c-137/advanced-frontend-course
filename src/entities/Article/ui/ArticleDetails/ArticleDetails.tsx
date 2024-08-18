@@ -38,8 +38,6 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
     const article = useSelector(getArticleDetailsData);
 
-    console.log(article, 'article');
-
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
             dispatch(fetchArticleById(id));
