@@ -22,6 +22,7 @@
     "loginError": "Incorrect login or password",
     "profile": "Profile",
     "profileEdit": "Edit profile",
+    "edit": "Edit",
     "cancel": "Cancel",
     "save": "Save",
     "currency": "Currency",

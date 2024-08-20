@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { memo, useCallback } from 'react';
 import { CommentList } from 'entities/Comment';
 import { Text, TextSize } from 'shared/ui/Text/Text';
@@ -7,8 +7,6 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { ArticleDetails, ArticlesList } from '../../../entities/Article';
 import cls from './ArticleDetailsPage.module.scss';
@@ -38,11 +36,6 @@ const ArticleDetailsPage = () => {
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleDetailRecommendationsIsLoading);
     const error = useSelector(getArticleDetailsCommentsError);
-    const navigate = useNavigate();
-
-    const backToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -64,9 +57,7 @@ const ArticleDetailsPage = () => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={cls.articleDetailsPage}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={backToList}>
-                    {t('toArticlesList')}
-                </Button>
+
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} title={t('recommendationsTitle')} className={cls.commentsTitle} />
                 <ArticlesList
