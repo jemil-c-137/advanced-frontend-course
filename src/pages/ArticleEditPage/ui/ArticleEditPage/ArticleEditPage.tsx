@@ -10,7 +10,7 @@ const ArticleEditPage = memo(() => {
 
     return (
         <Page>
-            {isEdit ? t('editArticle') : t('createNewArticle')}
+            {isEdit ? t('editArticle') : t('createArticle')}
         </Page>
     );
 });
