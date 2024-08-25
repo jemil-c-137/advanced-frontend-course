@@ -22,6 +22,7 @@ import {
     fetchArticlesRecommendations,
 } from '../model/service/fetchArticlesRecommendations/fetchArticlesRecommendations';
 import { articleDetailsPageReducers } from '../model/slice';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducers,
@@ -57,7 +58,7 @@ const ArticleDetailsPage = () => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={cls.articleDetailsPage}>
-
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} title={t('recommendationsTitle')} className={cls.commentsTitle} />
                 <ArticlesList
