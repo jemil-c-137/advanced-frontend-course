@@ -67,6 +67,7 @@
         "eslint-plugin-react": "^7.29.2",
         "eslint-plugin-react-hooks": "^4.3.0",
         "eslint-plugin-storybook": "^0.8.0",
+        "eslint-plugin-the-fsd-path-plugin": "^0.0.5",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^8.0.0",
