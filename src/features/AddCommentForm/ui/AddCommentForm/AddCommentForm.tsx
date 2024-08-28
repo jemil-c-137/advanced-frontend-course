@@ -10,6 +10,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import cls from './AddCommentForm.module.scss';
 
 const reducer: ReducerList = {
@@ -41,12 +42,12 @@ const AddCommentForm = memo(({ onSendComment }: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <div className={cls.addCommentForm}>
+            <HStack justify="between" max className={cls.addCommentForm}>
                 <Input placeholder={t('addCommentText')} value={text} onChange={onCommentTextChange} />
                 <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>
                     {t('sendComment')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });

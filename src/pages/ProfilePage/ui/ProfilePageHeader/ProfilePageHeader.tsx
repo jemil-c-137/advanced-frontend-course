@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack/';
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from '../../../../entities/Profile';
-import cls from './ProfilePageHeader.module.scss';
 
 export const ProfilePageHeader = () => {
     const { t } = useTranslation();
@@ -32,29 +32,24 @@ export const ProfilePageHeader = () => {
     }, [dispatch]);
 
     return (
-        <div className={cls.profilePageHeader}>
+        <HStack max justify="between">
             <Text title={t('profile')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
-                    {
-                        (readonly ? (
-                            <Button className={cls.editBtn} onClick={onEdit}>
-                                {t('profileEdit')}
-                            </Button>
-                        ) : (
-                            <div>
-                                <Button className={cls.editBtn} onClick={onSave}>
-                                    {t('Save')}
-                                </Button>
-                                <Button className={cls.editBtn} onClick={onCancelEdit}>
-                                    {t('Cancel')}
-                                </Button>
-                            </div>
-                        ))
-                    }
-                </div>
+                (readonly ? (
+                    <Button onClick={onEdit}>
+                        {t('profileEdit')}
+                    </Button>
+                ) : (
+                    <HStack gap="8">
+                        <Button onClick={onSave}>
+                            {t('Save')}
+                        </Button>
+                        <Button onClick={onCancelEdit}>
+                            {t('Cancel')}
+                        </Button>
+                    </HStack>
+                ))
             )}
-
-        </div>
+        </HStack>
     );
 };

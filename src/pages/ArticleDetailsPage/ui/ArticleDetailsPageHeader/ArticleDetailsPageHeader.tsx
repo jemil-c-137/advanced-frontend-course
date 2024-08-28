@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 export const ArticleDetailsPageHeader = () => {
     const navigate = useNavigate();
@@ -23,17 +23,17 @@ export const ArticleDetailsPageHeader = () => {
     }, [navigate, article]);
 
     return (
-        <div className={cls.articleDetailsHeader}>
+        <HStack justify="between" max>
             <Button theme={ButtonTheme.OUTLINE} onClick={backToList}>
                 {t('toArticlesList')}
             </Button>
             {
                 canEdit && (
-                    <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={editArticle}>
+                    <Button theme={ButtonTheme.OUTLINE} onClick={editArticle}>
                         {t('edit')}
                     </Button>
                 )
             }
-        </div>
+        </HStack>
     );
 };
