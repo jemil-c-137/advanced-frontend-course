@@ -53,7 +53,18 @@ module.exports = {
         'react/jsx-closing-bracket-location': [1, 'after-props'],
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'direction', 'align', 'justify', 'gap'] },
+            { markupOnly: true, ignoreAttribute: 
+                [
+                    'to',
+                    'data-testid',
+                    'direction',
+                    'align',
+                    'justify',
+                    'gap',
+                    'role',
+                    'as',
+                ], 
+            },
         ],
         'i18next/jsx-attributes': 'off',
         'max-len': ['error', { ignoreComments: true, code: 120 }],
