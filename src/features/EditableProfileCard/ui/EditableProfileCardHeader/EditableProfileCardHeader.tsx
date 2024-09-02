@@ -6,11 +6,12 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { HStack } from 'shared/ui/Stack/';
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from '../../../../entities/Profile';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { EditableProfileCardActions } from '../../model/slices/EditableProfileCardSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-export const ProfilePageHeader = () => {
+export const EditableProfileCardHeader = () => {
     const { t } = useTranslation();
 
     const authData = useSelector(getUserAuthData);
@@ -20,11 +21,11 @@ export const ProfilePageHeader = () => {
     const dispatch = useAppDispatch();
 
     const onEdit = useCallback(() => {
-        dispatch(profileActions.setReadonly(false));
+        dispatch(EditableProfileCardActions.setReadonly(false));
     }, [dispatch]);
 
     const onCancelEdit = useCallback(() => {
-        dispatch(profileActions.cancelEdit());
+        dispatch(EditableProfileCardActions.cancelEdit());
     }, [dispatch]);
 
     const onSave = useCallback(() => {
@@ -32,7 +33,7 @@ export const ProfilePageHeader = () => {
     }, [dispatch]);
 
     return (
-        <HStack max justify="between">
+        <HStack justify="between">
             <Text title={t('profile')} />
             {canEdit && (
                 (readonly ? (

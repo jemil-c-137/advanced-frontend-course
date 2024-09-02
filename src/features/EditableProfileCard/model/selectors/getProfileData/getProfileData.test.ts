@@ -1,9 +1,9 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Country } from '../../../../Country';
-import { Currency } from '../../../../Currency';
-import { getProfileForm } from './getProfileForm';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import { getProfileData } from './getProfileData';
 
-const form = {
+const data = {
     first: 'name',
     lastname: 'lastname',
     age: 22,
@@ -14,20 +14,20 @@ const form = {
     username: 'username',
 };
 
-describe('getProfileForm', () => {
-    test('should return profile form', () => {
+describe('getProfileData', () => {
+    test('should return profile data', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
-                form,
+                data,
             },
         };
 
-        expect(getProfileForm(state as StateSchema)).toBe(form);
+        expect(getProfileData(state as StateSchema)).toBe(data);
     });
 
-    test('should return empty string on empty state', () => {
+    test('should return undefined on empty state', () => {
         const state: DeepPartial<StateSchema> = {};
 
-        expect(getProfileForm(state as StateSchema)).toBe(undefined);
+        expect(getProfileData(state as StateSchema)).toBe(undefined);
     });
 });

@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Profile } from 'entities/Profile';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { Profile, ProfileSchema } from '../types/profile';
+import { ProfileSchema } from '../types/EditableProfileCardSchema';
 
 const initialState: ProfileSchema = {
     readonly: true,
@@ -10,7 +11,7 @@ const initialState: ProfileSchema = {
     data: undefined,
 };
 
-const profileSlice = createSlice({
+export const EditableProfileCardSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
@@ -62,5 +63,5 @@ const profileSlice = createSlice({
     },
 });
 
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: EditableProfileCardActions } = EditableProfileCardSlice;
+export const { reducer: EditableProfileCardReducer } = EditableProfileCardSlice;
