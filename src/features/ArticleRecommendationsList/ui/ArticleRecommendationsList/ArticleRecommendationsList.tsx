@@ -18,17 +18,14 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
     const { data: articles, isLoading, error } = useGetArticlesRecommendationsListQuery(4);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
-
-    console.log('data', articles);
 
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>
             <Text size={TextSize.L} title={t('recommendationsTitle')} />
             <ArticlesList
-                // eslint-disable-next-line i18next/no-literal-string
                 target="_blank"
                 articles={articles}
                 isLoading={isLoading} />

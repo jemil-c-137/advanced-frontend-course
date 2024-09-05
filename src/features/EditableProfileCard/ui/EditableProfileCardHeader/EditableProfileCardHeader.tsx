@@ -37,15 +37,15 @@ export const EditableProfileCardHeader = () => {
             <Text title={t('profile')} />
             {canEdit && (
                 (readonly ? (
-                    <Button onClick={onEdit}>
+                    <Button data-testid="EditableProfileCardHeader.EditButton" onClick={onEdit}>
                         {t('profileEdit')}
                     </Button>
                 ) : (
                     <HStack gap="8">
-                        <Button onClick={onSave}>
+                        <Button onClick={onSave} data-testid="EditableProfileCardHeader.SaveButton">
                             {t('Save')}
                         </Button>
-                        <Button onClick={onCancelEdit}>
+                        <Button onClick={onCancelEdit} data-testid="EditableProfileCardHeader.CancelButton">
                             {t('Cancel')}
                         </Button>
                     </HStack>

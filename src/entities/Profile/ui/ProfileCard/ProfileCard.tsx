@@ -74,13 +74,15 @@ export const ProfileCard = ({
                 placeholder={t('firstNamePlaceholder')}
                 onChange={onFirstNameChange}
                 className={cls.input}
-                readonly={isReadonly} />
+                readonly={isReadonly}
+                data-testid="ProfileCard.firstName" />
             <Input
                 value={data?.lastname || ''}
                 placeholder={t('lastNamePlaceholder')}
                 onChange={onLastNameChange}
                 className={cls.input}
-                readonly={isReadonly} />
+                readonly={isReadonly}
+                data-testid="ProfileCard.lastName" />
 
             <Input
                 value={data?.age || ''}
