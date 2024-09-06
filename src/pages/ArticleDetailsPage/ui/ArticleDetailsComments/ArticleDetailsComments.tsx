@@ -40,7 +40,7 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
     }, [dispatch]);
 
     return (
-        <VStack gap="8">
+        <VStack gap="8" max>
             <Text size={TextSize.L} title={t('commentsTitle')} className={cls.commentsTitle} />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList

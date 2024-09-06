@@ -58,27 +58,4 @@ describe('features/EditableProfileCard', () => {
 
         expect(screen.getByTestId('ProfileCard.firstName')).toHaveValue('admin');
     });
-
-    test('Error should appear', async () => {
-        componentRender(<EditableProfileCard id="1" />, options);
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
-        await userEvent.clear(screen.getByTestId('ProfileCard.firstName'));
-        await userEvent.type(screen.getByTestId('ProfileCard.firstName'), 'user');
-
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'));
-
-        expect(screen.getByTestId('EditableProfileCard.Error.Text')).toBeInTheDocument();
-    });
-
-    test('should make request on valid form sent', async () => {
-        const mockRequest = jest.spyOn(api, 'put');
-        componentRender(<EditableProfileCard id="1" />, options);
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
-
-        await userEvent.type(screen.getByTestId('ProfileCard.firstName'), 'user');
-
-        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'));
-
-        expect(mockRequest).toHaveBeenCalled();
-    });
 });

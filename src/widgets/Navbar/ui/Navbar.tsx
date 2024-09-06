@@ -8,11 +8,16 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLInk/AppLink';
-import { routeConfig, RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Dropdown } from 'shared/ui/Dropdown/Dropwdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
-import { getUserAuthData, userActions } from '../../../entities/User';
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from '../../../entities/User';
 
 interface NavbarProps {
     className?: string;
@@ -25,6 +30,8 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
     const [isAuthMode, setIsAuthMode] = useState(false);
 
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const dispatch = useDispatch();
 
@@ -40,6 +47,10 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
+    console.log(isAdminPanelAvailable, 'available');
+
     if (authData) {
         return (
             <div className={classNames(cls.navbar)}>
@@ -53,6 +64,7 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable ? [{ content: t('Admin panel'), href: RoutePath.admin_panel }] : []),
                         { content: t('profile'), onClick: () => {}, href: RoutePath.profile + authData.id },
                         { content: t('logout'), onClick: onLogout },
                     ]}
