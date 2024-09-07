@@ -1,6 +1,7 @@
 import {
     FC,
     MouseEvent,
+    ReactNode,
     useCallback,
     useEffect,
     useRef,
@@ -15,6 +16,7 @@ interface ModalProps {
     onClose?: () => void;
     className?: string;
     lazy?: boolean;
+    children: ReactNode;
 }
 
 export const Modal: FC<ModalProps> = (props) => {

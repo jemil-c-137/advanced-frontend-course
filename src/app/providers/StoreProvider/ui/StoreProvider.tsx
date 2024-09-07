@@ -1,13 +1,13 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StoreSchema';
 
 interface StoreProviderProps {
     initialState?: DeepPartial<StateSchema>;
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
+    children: ReactNode;
 }
 
 export const StoreProvider: FC<StoreProviderProps> = ({
