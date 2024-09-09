@@ -1,5 +1,5 @@
 import { LoginSchema } from './model/types/loginSchema';
 
-export { LoginSchema };
+export type { LoginSchema };
 
 export { LoginModal } from './ui/LoginModal/LoginModal';

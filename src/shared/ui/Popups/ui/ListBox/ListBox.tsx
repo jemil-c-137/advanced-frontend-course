@@ -3,9 +3,11 @@ import {
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from '../Button/Button';
-import { DropDownDirection } from '../../types/ui';
+import { Button } from '../../../Button/Button';
+import { DropDownDirection } from '../../../../types/ui';
 import cls from './ListBox.module.scss';
+import { mapDirectionClass } from '../../styles/consts';
+import popupsCls from '../../styles/popup.module.scss';
 
 interface ListBoxItem {
     value: string;
@@ -25,13 +27,6 @@ interface ListBoxProps {
 
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
-
 export function ListBox(props: ListBoxProps) {
     const {
         items,
@@ -49,9 +44,9 @@ export function ListBox(props: ListBoxProps) {
             disabled={readonly}
             as="div"
             value={value}
-            className={classNames(cls.listBox, {}, [className])}
+            className={classNames(cls.listBox, {}, [className, popupsCls.popup])}
             onChange={onChange}>
-            <HListbox.Button as="div" className={cls.trigger}>
+            <HListbox.Button as="div" className={popupsCls.trigger}>
                 {label && <span className={cls.label}>{label}</span>}
                 <Button disabled={readonly}>
                     {value ?? defaultValue}
@@ -67,8 +62,8 @@ export function ListBox(props: ListBoxProps) {
                         {({ active, selected }) => (
                             <li className={
                                 classNames(cls.option, {
-                                    [cls.active]: active,
-                                    [cls.disabled]: item.disabled,
+                                    [popupsCls.active]: active,
+                                    [popupsCls.disabled]: item.disabled,
                                 })
                             }>
                                 {selected && '-'}

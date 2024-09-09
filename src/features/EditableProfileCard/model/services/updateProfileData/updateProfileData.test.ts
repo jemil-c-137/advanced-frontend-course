@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile';
 import { TestAsyncThunk } from 'shared/lib/TestAsyncThunk/TestAsyncThunk';
+import { ValidateProfileError } from '../../constants/constants';
 import { updateProfileData } from './updateProfileData';
 
 jest.mock('axios');

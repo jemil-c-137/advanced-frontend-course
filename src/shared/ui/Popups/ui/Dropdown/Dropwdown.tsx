@@ -2,29 +2,24 @@ import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropDownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLInk/AppLink';
+import { AppLink } from '../../../AppLInk/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
 import cls from './Dropdown.module.scss';
+import popupsCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
-  disabled?: boolean;
-  content: ReactNode;
-  onClick?: () => void;
-  href?: string;
+    disabled?: boolean;
+    content: ReactNode;
+    onClick?: () => void;
+    href?: string;
 }
 
 interface DropdownProps {
-  className?: string;
-  items: DropdownItem[];
-  trigger: ReactNode;
-  direction?: DropDownDirection;
+    className?: string;
+    items: DropdownItem[];
+    trigger: ReactNode;
+    direction?: DropDownDirection;
 }
-
-const mapDirectionClass: Record<DropDownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
 
 export function Dropdown(props: DropdownProps) {
     const {
@@ -37,8 +32,8 @@ export function Dropdown(props: DropdownProps) {
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as="div" className={classNames(cls.dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>
+        <Menu as="div" className={classNames(cls.dropdown, {}, [className, popupsCls.popup])}>
+            <Menu.Button className={popupsCls.trigger}>
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
@@ -48,7 +43,7 @@ export function Dropdown(props: DropdownProps) {
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [cls.active]: active })}>
+                            className={classNames(cls.item, { [popupsCls.active]: active })}>
                             {item.content}
                         </button>
                     );

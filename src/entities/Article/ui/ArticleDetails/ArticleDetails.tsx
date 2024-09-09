@@ -9,8 +9,9 @@ import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/constants/constants';
 import {
     getArticleDetailsData,
     getArticleDetailsError,

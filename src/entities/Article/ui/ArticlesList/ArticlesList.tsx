@@ -1,7 +1,8 @@
 import { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import { ArticleView } from '../../model/constants/constants';
 import { ArticleListItemSkeleton } from '../ArticlesListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticlesListItem/ArticlesListItem';
 

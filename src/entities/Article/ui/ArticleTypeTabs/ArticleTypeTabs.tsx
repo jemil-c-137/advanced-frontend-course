@@ -1,4 +1,3 @@
-import { ArticleType } from 'entities/Article/model/types/article';
 import { getArticlesPageType } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
@@ -7,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { ArticleType } from '../../model/constants/constants';
 
 export const ArticleTypeTabs = memo(() => {
     const { t } = useTranslation();
