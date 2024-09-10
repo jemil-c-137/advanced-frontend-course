@@ -603,5 +603,28 @@
       "username": "user",
       "avatar": "https://static.wikia.nocookie.net/denaruto3/images/9/9f/Smallnaruto.png"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "descrtipns": "Descroiption of notification",
+      "userId": "1"
+    },    {
+      "id": "2",
+      "title": "Notification 2",
+      "descrtipns": "Descroiption of notification",
+      "userId": "1"
+    },    {
+      "id": "3",
+      "title": "Notification 3",
+      "descrtipns": "Descroiption of notification",
+      "userId": "1"
+    },    {
+      "id": "4",
+      "title": "Notification 4",
+      "descrtipns": "Descroiption of notification",
+      "userId": "1"
+    }
   ]
 }

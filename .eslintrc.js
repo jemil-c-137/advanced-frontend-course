@@ -53,7 +53,9 @@ module.exports = {
         'react/jsx-closing-bracket-location': [1, 'after-props'],
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: 
+            {
+                markupOnly: true,
+                ignoreAttribute:
                 [
                     'to',
                     'data-testid',
@@ -63,8 +65,9 @@ module.exports = {
                     'gap',
                     'role',
                     'as',
-                    'target'
-                ], 
+                    'target',
+                    'border',
+                ],
             },
         ],
         'i18next/jsx-attributes': 'off',
