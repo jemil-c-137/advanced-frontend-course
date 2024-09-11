@@ -12,14 +12,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationsButton } from 'features/NotificationsButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
 import cls from './Navbar.module.scss';
-import {
-    getUserAuthData,
-    isUserAdmin,
-    isUserManager,
-    userActions,
-} from '../../../entities/User';
+import { getUserAuthData } from '../../../entities/User';
 
 interface NavbarProps {
     className?: string;
@@ -41,12 +35,6 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
         setIsAuthMode(true);
     }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-    };
-
     if (authData) {
         return (
             <div className={classNames(cls.navbar)}>
@@ -57,10 +45,6 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
                     {t('createArticle')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
-                    <button type="button" onClick={handleClick}>{t('logout')}</button>
-                    <Drawer isOpen={isOpen}>
-                        {t('noDataError')}
-                    </Drawer>
                     <NotificationsButton />
                     <AvatarDropdown />
                 </HStack>

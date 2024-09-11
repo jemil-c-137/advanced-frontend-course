@@ -1,12 +1,9 @@
 import {
     FC,
     ReactNode,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -24,46 +21,11 @@ export const Modal: FC<ModalProps> = (props) => {
         children, isOpen, onClose, className, lazy,
     } = props;
 
-    const [isClosing, setIsClosing] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
-
-    const handleClose = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, 200);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback(
-        (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                handleClose();
-            }
-        },
-        [handleClose],
-    );
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
+    const {
+        isMounted,
+        isClosing,
+        close,
+    } = useModal({ animationDelay: 200, onClose, isOpen });
 
     if (lazy && !isMounted) {
         return null;
@@ -80,7 +42,7 @@ export const Modal: FC<ModalProps> = (props) => {
                     },
                     [className],
                 )}>
-                <Overlay className={cls.overlay} onClick={handleClose} />
+                <Overlay className={cls.overlay} onClick={close} />
                 <div className={cls.content}>
                     {children}
                 </div>
