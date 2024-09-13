@@ -1,22 +1,22 @@
-import { ArticlesSortField, ArticlesViewSelector, ArticleView } from 'entities/Article';
-import { ArticleSortSelector } from 'entities/Article/';
-import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { ArticlesSortField, ArticlesViewSelector, ArticleView } from '@/entities/Article';
+import { ArticleSortSelector } from '@/entities/Article/';
+import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import {
     getArticlesPageSort,
     getArticlesPageView,
     getArticlesPageOrder,
     getArticlesPageSearch,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
 import cls from './ArticlePageFilters.module.scss';
 
 export const ArticlePageFilters = memo(() => {

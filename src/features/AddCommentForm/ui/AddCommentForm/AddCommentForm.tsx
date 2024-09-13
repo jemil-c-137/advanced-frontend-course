@@ -1,16 +1,19 @@
-import {
-    getAddCommentFormText,
-    getAddCommentFormError,
-} from 'features/AddCommentForm/model/selectors/addCommentFormSelectors';
-import { addCommentFormActions, addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { HStack } from 'shared/ui/Stack';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '@/features/AddCommentForm/model/slice/addCommentFormSlice';
+import {
+    getAddCommentFormText,
+    getAddCommentFormError,
+} from '@/features/AddCommentForm/model/selectors/addCommentFormSelectors';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
+import { HStack } from '@/shared/ui/Stack';
 import cls from './AddCommentForm.module.scss';
 
 const reducer: ReducerList = {

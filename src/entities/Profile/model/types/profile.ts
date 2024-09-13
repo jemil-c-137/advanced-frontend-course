@@ -1,4 +1,4 @@
-import { ValidateProfileError } from 'features/EditableProfileCard';
+import { ValidateProfileError } from '@/features/EditableProfileCard';
 import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
 

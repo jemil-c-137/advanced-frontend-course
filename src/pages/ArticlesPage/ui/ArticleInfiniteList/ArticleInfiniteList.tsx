@@ -1,13 +1,13 @@
-import { ArticlesList, ArticleView } from 'entities/Article';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { ArticlesList, ArticleView } from '@/entities/Article';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { getArticles } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { Text } from 'shared/ui/Text/Text';
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import { getArticles } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
+import { Text } from '@/shared/ui/Text/Text';
 import cls from './ArticleInfiniteList.module.scss';
 
 export const ArticleInfiniteList = () => {
