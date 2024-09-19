@@ -7,6 +7,13 @@ interface IconProps {
     inverted?: boolean;
 }
 
-export const Icon = ({ Svg, className, inverted }: IconProps) => (
-    <Svg className={classNames(cls.icon, { [cls.inverted]: inverted }, [className])} />
+export const Icon = ({
+    Svg,
+    className,
+    inverted,
+    ...otherProps
+}: IconProps) => (
+    <Svg
+        className={classNames(cls.icon, { [cls.inverted]: inverted }, [className])}
+        {...otherProps} />
 );

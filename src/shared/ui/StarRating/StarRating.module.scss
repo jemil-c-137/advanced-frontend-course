@@ -1,0 +1,12 @@
+.normal {
+    fill: none;
+}
+
+.starIcon {
+    fill: none;
+    cursor: pointer;
+
+    &:hover {
+        fill: var(--primary-color);
+    }
+}
