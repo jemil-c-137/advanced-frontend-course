@@ -11,7 +11,7 @@ interface StarRatingProps {
     selectedStars?: number;
 }
 
-const stars = [1, 2];
+const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
     const {
@@ -37,14 +37,28 @@ export const StarRating = memo((props: StarRatingProps) => {
         }
     };
 
+    const onClick = (starsCount: number) => () => {
+        if (!isSelected) {
+            onSelect?.(starsCount);
+            setCurrentStarCount(starsCount);
+            setIsSelected(true);
+        }
+    };
+
     return (
         <div className={classNames('', {}, [className])}>
             {stars.map((star) => (
                 <Icon
                     className={classNames(
                         cls.starIcon,
-                        { [cls.hovered]: isHovered },
+                        {
+                            [cls.selected]: isSelected,
+                            [cls.hovered]: isHovered || currentStarCount >= star,
+                        },
                     )}
+                    onMouseLeave={onLeave}
+                    onMouseEnter={onHover(star)}
+                    onClick={onClick(star)}
                     Svg={StarIcon}
                     key={star} />
             ))}
