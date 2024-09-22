@@ -31,12 +31,13 @@ export default ({ config }: { config: webpack.Configuration }) => {
     );
 
     config.resolve!.alias = {
-        entities: path.resolve(__dirname, '../../src/entities'),
-        features: path.resolve(__dirname, '../../src/features'),
-        shared: path.resolve(__dirname, '../../src/shared'),
-        widgets: path.resolve(__dirname, '../../src/widgets'),
-        pages: path.resolve(__dirname, '../../src/pages'),
-        app: path.resolve(__dirname, '../../src/app'),
+        ...config.resolve?.alias,
+        '@/entities': path.resolve(__dirname, '../../src/entities'),
+        '@/features': path.resolve(__dirname, '../../src/features'),
+        '@/shared': path.resolve(__dirname, '../../src/shared'),
+        '@/widgets': path.resolve(__dirname, '../../src/widgets'),
+        '@/pages': path.resolve(__dirname, '../../src/pages'),
+        '@/app': path.resolve(__dirname, '../../src/app'),
     };
     return config;
 };

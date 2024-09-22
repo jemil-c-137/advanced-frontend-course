@@ -10,6 +10,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducers } from '../model/slice';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/ArticleRating';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducers,
@@ -33,6 +34,7 @@ const ArticleDetailsPage = () => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments articleId={id} />
                 </VStack>
