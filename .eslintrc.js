@@ -30,7 +30,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', 'i18next', 'react-hooks', 'eslint-plugin-the-fsd-path-plugin'],
+    plugins: ['eslint-plugin-the-fsd-path-plugin', 'react', 'i18next', 'react-hooks'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -78,7 +78,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'eslint-plugin-the-fsd-path-plugin/path-checker': 'off',
+        'eslint-plugin-the-fsd-path-plugin/public-api-imports': 'off',
     },
     globals: {
         __IS_DEV__: true,
