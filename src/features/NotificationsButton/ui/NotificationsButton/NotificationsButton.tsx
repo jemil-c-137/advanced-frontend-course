@@ -1,12 +1,11 @@
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { NotificationsList } from '@/entities/Notification';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import { Popover } from '@/shared/ui/Popups';
 import NotifyIcon from '@/shared/assets/icons/notify.svg';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider/AnimationProvder';
+import { Drawer } from '@/shared/ui/Drawer';
 import cls from './NotificationsButton.module.scss';
 
 export const NotificationsButton = memo(() => {

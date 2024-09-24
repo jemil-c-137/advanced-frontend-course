@@ -7,7 +7,7 @@ import {
     getArticlesPageView,
 } from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { getArticles } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import cls from './ArticleInfiniteList.module.scss';
 
 export const ArticleInfiniteList = () => {

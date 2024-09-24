@@ -5,7 +5,7 @@ import { getArticlesPageType } from '@/pages/ArticlesPage/model/selectors/articl
 import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '../../model/constants/constants';
 
 export const ArticleTypeTabs = memo(() => {

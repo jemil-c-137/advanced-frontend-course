@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { RoutePath } from '@/shared/const/router';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLInk/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Page } from '@/widgets/Page/Page';
 
 const ForbiddenPage = () => (

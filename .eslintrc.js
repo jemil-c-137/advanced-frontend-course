@@ -30,8 +30,10 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['eslint-plugin-the-fsd-path-plugin', 'react', 'i18next', 'react-hooks'],
+    plugins: ['eslint-plugin-ulbi-tv-plugin', 'react', 'i18next', 'react-hooks', 'unused-imports'],
     rules: {
+        'unused-imports/no-unused-imports': 'error',
+        'eslint-plugin-ulbi-tv-plugin/path-checker': 'off',
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -78,7 +80,6 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'eslint-plugin-the-fsd-path-plugin/public-api-imports': 'off',
     },
     globals: {
         __IS_DEV__: true,

@@ -16,9 +16,9 @@ import {
 import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { VStack } from '@/shared/ui/Stack';
-import { TextSize, Text } from '@/shared/ui/Text/Text';
+import { TextSize, Text } from '@/shared/ui/Text';
 import cls from './ArticleDetailsComments.module.scss';
 
 interface ArticleDetailsCommentsProps {
