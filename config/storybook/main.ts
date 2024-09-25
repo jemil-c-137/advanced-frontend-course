@@ -9,6 +9,13 @@ const config: StorybookConfig = {
         '@storybook/addon-interactions',
         'storybook-addon-react-router-v6',
         'storybook-addon-mock',
+        'storybook-addon-theme',
+        {
+            name: '@storybook/addon-essentials',
+            options: {
+                backgrounds: false, // 👈 disable the backgrounds addon
+            },
+        },
     ],
     framework: {
         name: '@storybook/react-webpack5',

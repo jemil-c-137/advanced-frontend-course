@@ -6,7 +6,7 @@ import { getCanEditArticles } from '@/pages/ArticleDetailsPage/model/selectors/a
 import { getArticleDetailsData } from '@/entities/Article';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 export const ArticleDetailsPageHeader = () => {
     const navigate = useNavigate();
@@ -15,11 +15,11 @@ export const ArticleDetailsPageHeader = () => {
     const canEdit = useSelector(getCanEditArticles);
 
     const backToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const editArticle = useCallback(() => {
-        navigate(`${RoutePath.articles}/${article!.id}/edit`);
+        navigate(getRouteArticleEdit(article!.id));
     }, [navigate, article]);
 
     return (

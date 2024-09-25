@@ -3,8 +3,8 @@ import GridIcon from '@/shared/assets/icons/grid.svg';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleView } from '../../model/constants/constants';
-import cls from './ArticlesViewSelector.module.scss';
+import cls from './ArticleViewSelector.module.scss';
+import { ArticleView } from '@/entities/Article';
 
 const viewTypes = [
     {

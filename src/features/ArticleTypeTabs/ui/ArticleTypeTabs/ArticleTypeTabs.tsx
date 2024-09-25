@@ -6,7 +6,7 @@ import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArti
 import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
-import { ArticleType } from '../../model/constants/constants';
+import { ArticleType } from '@/entities/Article';
 
 export const ArticleTypeTabs = memo(() => {
     const { t } = useTranslation();

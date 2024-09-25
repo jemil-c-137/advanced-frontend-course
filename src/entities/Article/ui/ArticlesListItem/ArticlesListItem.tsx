@@ -17,7 +17,7 @@ import {
 import {
     ArticleBlockType, ArticleView,
 } from '../../model/constants/constants';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     article: Article;
@@ -53,7 +53,7 @@ export const ArticleListItem = (
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article.id}>
+                            to={getRouteArticleDetails(article.id)}>
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('readMore')}
                             </Button>
@@ -69,7 +69,7 @@ export const ArticleListItem = (
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
             <Card>
                 <div className={cls.imageWrapper}>

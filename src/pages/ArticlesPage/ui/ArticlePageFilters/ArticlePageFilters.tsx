@@ -1,9 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticlesSortField, ArticlesViewSelector, ArticleView } from '@/entities/Article';
-import { ArticleSortSelector } from '@/entities/Article/';
-import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { ArticlesSortField, ArticleView } from '@/entities/Article';
 import {
     getArticlesPageSort,
     getArticlesPageView,
@@ -18,6 +16,9 @@ import { SortOrder } from '@/shared/types';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 import cls from './ArticlePageFilters.module.scss';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticlesViewSelector } from '@/features/ArticleViewSelector';
 
 export const ArticlePageFilters = memo(() => {
     const { t } = useTranslation();

@@ -13,7 +13,7 @@ import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cls from './Navbar.module.scss';
 import { getUserAuthData } from '../../../entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -40,7 +40,7 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
             <div className={classNames(cls.navbar)}>
                 <Text title={t('appTitle')} theme={TextTheme.INVERTED} className={cls.appName} />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}>
                     {t('createArticle')}
                 </AppLink>
