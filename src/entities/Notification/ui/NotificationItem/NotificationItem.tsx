@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card, CardTheme } from '@/shared/ui/Card';
-import { AppLink } from '@/shared/ui/AppLink';
 import { Text } from '@/shared/ui/Text';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
+import { AppLink } from '@/shared/ui/AppLink';
 
 interface NotificationProps {
     className?: string;
