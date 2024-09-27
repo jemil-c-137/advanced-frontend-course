@@ -7,6 +7,7 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { userReducer } from '../../../../entities/User';
 import { createReducerManager } from './reducersManager';
 import { StateSchema } from './StoreSchema';
+import { counterReducer } from '@/entities/Counter';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -17,6 +18,7 @@ export function createReduxStore(
         user: userReducer,
         scrollSave: scrollSaveReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
+        counter: counterReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

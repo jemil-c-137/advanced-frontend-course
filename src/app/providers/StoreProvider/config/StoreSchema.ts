@@ -15,6 +15,7 @@ import { ScrollSaveSchema } from '@/features/ScrollSave';
 import { ArticlesDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { CounterSchema } from '@/entities/Counter';
 
 export interface StateSchema {
     user: UserSchema;
@@ -26,6 +27,7 @@ export interface StateSchema {
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
     articleDetailsPage?: ArticlesDetailsPageSchema;
+    counter: CounterSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

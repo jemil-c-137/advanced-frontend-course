@@ -12,18 +12,15 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
-                    [
-                        'i18next-extract',
-                        { locales: ['en', 'ru'], keyAsDefaultValue: true },
-                    ],
                     ['@babel/plugin-transform-typescript',
                         { isTsx },
                     ],
                     ['@babel/plugin-transform-runtime'],
                     isDev && require.resolve('react-refresh/babel'),
-                    isTsx && [babelRemovePropsPlugin, {
+                    isTsx && !isDev && [babelRemovePropsPlugin, {
                         props: ['data-testid'],
                     }],
                 ].filter(Boolean),
