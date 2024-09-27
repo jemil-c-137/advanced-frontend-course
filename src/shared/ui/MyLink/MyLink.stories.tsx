@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AppLink, AppLinkTheme } from './AppLink';
+import { MyLink, MyLinkTheme } from './MyLink';
 
 const meta = {
-    title: 'shared/AppLink',
-    component: AppLink,
+    title: 'shared/MyLink',
+    component: MyLink,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
         layout: 'centered',
@@ -14,7 +14,7 @@ const meta = {
     args: {
         to: '/',
     },
-} satisfies Meta<typeof AppLink>;
+} satisfies Meta<typeof MyLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -22,12 +22,12 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         children: 'Text',
-        theme: AppLinkTheme.PRIMARY,
+        theme: MyLinkTheme.PRIMARY,
     },
 };
 export const Secondary: Story = {
     args: {
         children: 'Text',
-        theme: AppLinkTheme.SECONDARY,
+        theme: MyLinkTheme.SECONDARY,
     },
 };

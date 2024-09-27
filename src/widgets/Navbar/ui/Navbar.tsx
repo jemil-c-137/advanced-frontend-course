@@ -7,13 +7,13 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cls from './Navbar.module.scss';
 import { getUserAuthData } from '../../../entities/User';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { MyLink, MyLinkTheme } from '@/shared/ui/MyLink';
 
 interface NavbarProps {
     className?: string;
@@ -39,11 +39,11 @@ export const Navbar = memo((props: PropsWithChildren<NavbarProps>) => {
         return (
             <div className={classNames(cls.navbar)}>
                 <Text title={t('appTitle')} theme={TextTheme.INVERTED} className={cls.appName} />
-                <AppLink
+                <MyLink
                     to={getRouteArticleCreate()}
-                    theme={AppLinkTheme.SECONDARY}>
+                    theme={MyLinkTheme.SECONDARY}>
                     {t('createArticle')}
-                </AppLink>
+                </MyLink>
                 <HStack gap="16" className={cls.actions}>
                     <NotificationsButton />
                     <AvatarDropdown />

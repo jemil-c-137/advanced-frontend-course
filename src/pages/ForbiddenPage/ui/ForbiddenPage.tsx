@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { getRouteMain } from '@/shared/const/router';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { MyLink, MyLinkTheme } from '@/shared/ui/MyLink';
 import { Page } from '@/widgets/Page/Page';
 
 const ForbiddenPage = () => (
@@ -9,9 +9,9 @@ const ForbiddenPage = () => (
             You have no access to this page
         </div>
 
-        <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteMain()}>
+        <MyLink theme={MyLinkTheme.SECONDARY} to={getRouteMain()}>
             go back
-        </AppLink>
+        </MyLink>
     </Page>
 );
 

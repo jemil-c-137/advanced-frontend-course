@@ -5,7 +5,7 @@ import { Card, CardTheme } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
-import { AppLink } from '@/shared/ui/AppLink';
+import { MyLink } from '@/shared/ui/MyLink';
 
 interface NotificationProps {
     className?: string;
@@ -25,9 +25,9 @@ export const NotificationItem = memo((props: NotificationProps) => {
 
     if (item.href) {
         return (
-            <AppLink to={item.href}>
+            <MyLink to={item.href}>
                 {content}
-            </AppLink>
+            </MyLink>
         );
     }
 

@@ -6,8 +6,8 @@ import { Text } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
+import { MyLink } from '@/shared/ui/MyLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import {
@@ -51,13 +51,13 @@ export const ArticleListItem = (
                     <img src={article.img} alt={article.title} className={cls.img} />
                     {textBlocks && <ArticleTextBlockComponent block={textBlocks} className={cls.textBlock} />}
                     <div className={cls.footer}>
-                        <AppLink
+                        <MyLink
                             target={target}
                             to={getRouteArticleDetails(article.id)}>
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('readMore')}
                             </Button>
-                        </AppLink>
+                        </MyLink>
                         <Text text={String(article.views)} className={cls.views} />
                         <Icon Svg={EyeIcon} />
                     </div>
@@ -67,7 +67,7 @@ export const ArticleListItem = (
     }
 
     return (
-        <AppLink
+        <MyLink
             target={target}
             to={getRouteArticleDetails(article.id)}
             className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
@@ -83,6 +83,6 @@ export const ArticleListItem = (
                 </div>
                 <Text text={article.title} className={cls.title} />
             </Card>
-        </AppLink>
+        </MyLink>
     );
 };

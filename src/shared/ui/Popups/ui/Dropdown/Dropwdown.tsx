@@ -2,10 +2,10 @@ import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
-import { AppLink } from '../../../AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import cls from './Dropdown.module.scss';
 import popupsCls from '../../styles/popup.module.scss';
+import { MyLink } from '@/shared/ui/MyLink';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -52,7 +52,7 @@ export function Dropdown(props: DropdownProps) {
                         return (
                             <Menu.Item
                                 to={item.href}
-                                as={AppLink}
+                                as={MyLink}
                                 disabled={item.disabled}
                                 key={item.content?.toString()}>
                                 {content}
