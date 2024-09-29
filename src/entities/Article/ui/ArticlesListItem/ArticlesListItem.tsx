@@ -18,6 +18,8 @@ import {
     ArticleBlockType, ArticleView,
 } from '../../model/constants/constants';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     article: Article;
@@ -48,7 +50,11 @@ export const ArticleListItem = (
                     </div>
                     <Text title={article.title} className={cls.title} />
                     <Text text={article.type.join(', ')} className={cls.types} />
-                    <img src={article.img} alt={article.title} className={cls.img} />
+                    <AppImage
+                        fallBack={<Skeleton width={30} height={30} />}
+                        src={article.img}
+                        alt={article.title}
+                        className={cls.img} />
                     {textBlocks && <ArticleTextBlockComponent block={textBlocks} className={cls.textBlock} />}
                     <div className={cls.footer}>
                         <MyLink
@@ -73,7 +79,11 @@ export const ArticleListItem = (
             className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
             <Card>
                 <div className={cls.imageWrapper}>
-                    <img src={article.img} className={cls.img} alt={article.title} />
+                    <AppImage
+                        fallBack={<Skeleton width={30} height={30} />}
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title} />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>

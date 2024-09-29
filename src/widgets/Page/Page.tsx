@@ -11,14 +11,16 @@ import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
+import { TestsProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestsProps {
     className?: string;
     children?: ReactNode;
     onScrollBottom?: () => void;
 }
 
-export const Page = ({ className, children, onScrollBottom }: PageProps) => {
+export const Page = (props: PageProps) => {
+    const { className, children, onScrollBottom } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -41,7 +43,12 @@ export const Page = ({ className, children, onScrollBottom }: PageProps) => {
     useInfiniteScroll({ callback: onScrollBottom, wrapperRef, triggerRef });
 
     return (
-        <section ref={wrapperRef} className={classNames(cls.page, {}, [className])} onScroll={onScroll}>
+        <section
+            // eslint-disable-next-line react/destructuring-assignment
+            data-testid={props['data-testid'] ?? ''}
+            ref={wrapperRef}
+            className={classNames(cls.page, {}, [className])}
+            onScroll={onScroll}>
             {children}
             {onScrollBottom && <div className={cls.trigger} ref={triggerRef} />}
         </section>

@@ -562,7 +562,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
+      "avatar": "foobar.jpg",
       "roles": ["ADMIN"]
     },
     {
