@@ -46,7 +46,7 @@ export const ArticlesList = ({
     }
 
     return (
-        <div className={classNames(cls.articlesList, {}, [cls[view], className])}>
+        <div data-testid="ArticlesList" className={classNames(cls.articlesList, {}, [cls[view], className])}>
             {articles.length ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>

@@ -1,49 +1,44 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentStory } from '@storybook/react';
+import { ProfileCard } from './ProfileCard';
 import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
 
-import { ProfileCard } from './ProfileCard';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
+// Default export for Storybook
+export default {
     title: 'entities/ProfileCard',
     component: ProfileCard,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas.
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
-} satisfies Meta<typeof ProfileCard>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof ProfileCard> = (args: any) => <ProfileCard {...args} />;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-    args: {
-        data: {
-            first: 'name',
-            lastname: 'lastname',
-            age: 22,
-            currency: Currency.EUR,
-            city: 'city',
-            avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
-            country: Country.Italy,
-            username: 'username',
-        },
+// Primary story
+export const Primary = Template.bind({});
+Primary.args = {
+    data: {
+        first: 'name',
+        lastname: 'lastname',
+        age: 22,
+        currency: Currency.EUR,
+        city: 'city',
+        avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+        country: Country.Italy,
+        username: 'username',
     },
 };
 
-export const IsLoading: Story = {
-    args: {
-        isLoading: true,
-    },
+// IsLoading story
+export const IsLoading = Template.bind({});
+IsLoading.args = {
+    isLoading: true,
 };
 
-export const Error: Story = {
-    args: {
-        error: 'error',
-    },
+// Error story
+export const Error = Template.bind({});
+Error.args = {
+    error: 'error',
 };

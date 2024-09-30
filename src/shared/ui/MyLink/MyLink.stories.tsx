@@ -1,33 +1,29 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 import { MyLink, MyLinkTheme } from './MyLink';
 
-const meta = {
+export default {
     title: 'shared/MyLink',
     component: MyLink,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
+    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     args: {
         to: '/',
     },
-} satisfies Meta<typeof MyLink>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Primary: Story = {
-    args: {
-        children: 'Text',
-        theme: MyLinkTheme.PRIMARY,
-    },
 };
-export const Secondary: Story = {
-    args: {
-        children: 'Text',
-        theme: MyLinkTheme.SECONDARY,
-    },
+
+const Template: ComponentStory<typeof MyLink> = (args: any) => <MyLink {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    children: 'Text',
+    theme: MyLinkTheme.PRIMARY,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    children: 'Text',
+    theme: MyLinkTheme.SECONDARY,
 };

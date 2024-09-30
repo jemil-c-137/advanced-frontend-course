@@ -1,28 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
+import { ComponentStory } from '@storybook/react';
+import React from 'react';
 import { CurrencySelect } from './CurrencySelect';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
+// Default export for Storybook
+export default {
     title: 'entities/CurrencySelect',
     component: CurrencySelect,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas.
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
-} satisfies Meta<typeof CurrencySelect>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+// Template function for CurrencySelect
+const Template: ComponentStory<typeof CurrencySelect> = (args: any) => <CurrencySelect {...args} />;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-    args: {
-        // eslint-disable-next-line max-len
-        value: '1',
-        onChange: () => {},
-    },
+// Primary story
+export const Primary = Template.bind({});
+Primary.args = {
+    value: '1',
+    onChange: () => {},
 };

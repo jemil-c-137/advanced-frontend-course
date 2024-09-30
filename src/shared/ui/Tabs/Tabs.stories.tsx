@@ -1,40 +1,37 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 import { Tabs } from './Tabs';
 
-const meta = {
+export default {
     title: 'shared/Tabs',
     component: Tabs,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-} satisfies Meta<typeof Tabs>;
+} as ComponentMeta<typeof Tabs>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof Tabs> = (args: any) => <Tabs {...args} />;
 
-export const Primary: Story = {
-    args: {
-        tabs: [
-            {
-                value: 'tab 1',
-                content: 'content of tab 1',
-            },
-            {
-                value: 'tab 2',
-                content: 'content of tab 2',
-            },
-            {
-                value: 'tab 3',
-                content: 'content of tab 3',
-            },
-            {
-                value: 'tab 4',
-                content: 'content of tab 4',
-            },
-        ],
-        value: 'tab 1',
-    },
+export const Primary = Template.bind({});
+Primary.args = {
+    tabs: [
+        {
+            value: 'tab 1',
+            content: 'content of tab 1',
+        },
+        {
+            value: 'tab 2',
+            content: 'content of tab 2',
+        },
+        {
+            value: 'tab 3',
+            content: 'content of tab 3',
+        },
+        {
+            value: 'tab 4',
+            content: 'content of tab 4',
+        },
+    ],
+    value: 'tab 1',
 };

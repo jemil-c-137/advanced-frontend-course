@@ -1,27 +1,24 @@
-import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ErrorPage } from './ErrorPage';
 import { Theme } from '@/shared/const/theme';
 
-const meta = {
+export default {
     title: 'widget/ErrorPage',
     component: ErrorPage,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} satisfies Meta<typeof ErrorPage>;
+} as ComponentMeta<typeof ErrorPage>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof ErrorPage> = (args: any) => <ErrorPage {...args} />;
 
-export const Light: Story = {};
-export const Dark: Story = {
-    decorators: ThemeDecorator(Theme.DARK),
-};
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

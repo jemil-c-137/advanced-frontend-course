@@ -1,23 +1,21 @@
-import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Sidebar } from './Sidebar';
 import { Theme } from '@/shared/const/theme';
 
-const meta = {
+export default {
     title: 'widget/Sidebar',
     component: Sidebar,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
+} as ComponentMeta<typeof Sidebar>;
 
-} satisfies Meta<typeof Sidebar>;
+const Template: ComponentStory<typeof Sidebar> = (args: any) => <Sidebar {...args} />;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export const Light = Template.bind({});
 
-export const Light: Story = {};
-export const Dark: Story = { decorators: ThemeDecorator(Theme.DARK) };
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

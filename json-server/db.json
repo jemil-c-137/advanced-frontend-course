@@ -563,21 +563,36 @@
       "username": "admin",
       "password": "123",
       "avatar": "foobar.jpg",
-      "roles": ["ADMIN"]
+      "roles": [
+        "ADMIN"
+      ]
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
-      "roles": ["USER"]
+      "roles": [
+        "USER"
+      ]
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
       "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
-      "roles": ["MANAGER"]
+      "roles": [
+        "MANAGER"
+      ]
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
+      "roles": [
+        "ADMIN"
+      ]
     }
   ],
   "profile": [
@@ -602,6 +617,17 @@
       "city": "kanoha",
       "username": "user",
       "avatar": "https://static.wikia.nocookie.net/denaruto3/images/9/9f/Smallnaruto.png"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "Test",
+      "age": 26,
+      "currency": "euro",
+      "country": "ukraine",
+      "city": "kanoha",
+      "username": "testuser",
+      "avatar": "https://static.wikia.nocookie.net/denaruto3/images/9/9f/Smallnaruto.png"
     }
   ],
   "notifications": [
@@ -610,17 +636,20 @@
       "title": "Notification 1",
       "descrtipns": "Descroiption of notification",
       "userId": "1"
-    },    {
+    },
+    {
       "id": "2",
       "title": "Notification 2",
       "descrtipns": "Descroiption of notification",
       "userId": "1"
-    },    {
+    },
+    {
       "id": "3",
       "title": "Notification 3",
       "descrtipns": "Descroiption of notification",
       "userId": "1"
-    },    {
+    },
+    {
       "id": "4",
       "title": "Notification 4",
       "descrtipns": "Descroiption of notification",

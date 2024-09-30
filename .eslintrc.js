@@ -30,10 +30,9 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['eslint-plugin-the-fsd-path-plugin', 'react', 'i18next', 'react-hooks', 'unused-imports'],
+    plugins: [ 'react', 'i18next', 'react-hooks', 'unused-imports'],
     rules: {
         'unused-imports/no-unused-imports': 'error',
-        'eslint-plugin-the-fsd-path-plugin/path-checker': 'off',
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],

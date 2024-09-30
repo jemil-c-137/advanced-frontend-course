@@ -1,19 +1,15 @@
-import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { ArticlesViewSelector } from './ArticleViewSelector';
 
-const meta = {
+export default {
     title: 'features/ArticleViewSelector',
     component: ArticlesViewSelector,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
-} satisfies Meta<typeof ArticlesViewSelector>;
+};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template = (args: any) => <ArticlesViewSelector {...args} />;
 
-export const Primary: Story = {};
+export const Primary = Template.bind({});

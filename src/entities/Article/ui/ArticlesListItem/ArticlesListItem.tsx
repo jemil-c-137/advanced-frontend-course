@@ -41,7 +41,7 @@ export const ArticleListItem = (
     if (view === ArticleView.LIST) {
         const textBlocks = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
         return (
-            <div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+            <div data-testid="ArticleListItem" className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar!} />
@@ -74,6 +74,7 @@ export const ArticleListItem = (
 
     return (
         <MyLink
+            data-testid="ArticleListItem"
             target={target}
             to={getRouteArticleDetails(article.id)}
             className={classNames(cls.articleListItem, {}, [className, cls[view]])}>

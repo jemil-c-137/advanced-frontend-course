@@ -1,147 +1,125 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ComponentStory } from '@storybook/react';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { Button, ButtonSize, ButtonTheme } from './Button';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
+export default {
     title: 'shared/Button',
     component: Button,
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
     },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-    tags: ['autodocs'],
-    // More on argTypes: https://storybook.js.org/docs/api/argtypes
-} satisfies Meta<typeof Button>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-    args: {
-        children: 'Text',
-        size: ButtonSize.M,
-    },
 };
 
-export const PrimaryL: Story = {
-    args: {
-        children: 'Text',
-        size: ButtonSize.L,
-    },
+const Template: ComponentStory<typeof Button> = (args: any) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    children: 'Text',
+    size: ButtonSize.M,
 };
 
-export const PrimaryXL: Story = {
-    args: {
-        children: 'Text',
-        size: ButtonSize.XL,
-    },
+export const PrimaryL = Template.bind({});
+PrimaryL.args = {
+    children: 'Text',
+    size: ButtonSize.L,
 };
 
-export const Clear: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.CLEAR,
-    },
+export const PrimaryXL = Template.bind({});
+PrimaryXL.args = {
+    children: 'Text',
+    size: ButtonSize.XL,
 };
 
-export const ClearInverted: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.CLEAR_INVERTED,
-    },
+export const Clear = Template.bind({});
+Clear.args = {
+    children: 'Text',
+    theme: ButtonTheme.CLEAR,
 };
 
-export const Outline: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.OUTLINE,
-    },
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+    children: 'Text',
+    theme: ButtonTheme.CLEAR_INVERTED,
 };
 
-export const OutlineL: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.L,
-    },
+export const Outline = Template.bind({});
+Outline.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
 };
 
-export const OutlineXL: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.XL,
-    },
+export const OutlineL = Template.bind({});
+OutlineL.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
 };
 
-export const OutlineDark: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.OUTLINE,
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
+export const OutlineXL = Template.bind({});
+OutlineXL.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.XL,
 };
 
-export const BackgroundTheme: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.BACKGROUND,
-    },
+export const OutlineDark = Template.bind({});
+OutlineDark.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+};
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BackgroundTheme = Template.bind({});
+BackgroundTheme.args = {
+    children: 'Text',
+    theme: ButtonTheme.BACKGROUND,
 };
 
-export const BackgroundInvertedTheme: Story = {
-    args: {
-        children: 'Text',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-    },
+export const BackgroundInvertedTheme = Template.bind({});
+BackgroundInvertedTheme.args = {
+    children: 'Text',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
-export const SquareM: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true,
-        size: ButtonSize.M,
-    },
+export const SquareM = Template.bind({});
+SquareM.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.M,
 };
 
-export const SquareL: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true,
-        size: ButtonSize.L,
-    },
+export const SquareL = Template.bind({});
+SquareL.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.L,
 };
 
-export const SquareXL: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true,
-        size: ButtonSize.XL,
-    },
+export const SquareXL = Template.bind({});
+SquareXL.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.XL,
 };
 
-export const Disabled: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND,
-        square: true,
-        disabled: true,
-    },
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND,
+    square: true,
+    disabled: true,
 };
 
-export const DisabledInverted: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true,
-        disabled: true,
-    },
+export const DisabledInverted = Template.bind({});
+DisabledInverted.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    disabled: true,
 };
