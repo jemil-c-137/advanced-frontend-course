@@ -43,6 +43,8 @@ const ArticleRating = (props: ArticleRatingProps) => {
 
     return (
         <RatingCard
+            data-testid="ArticleRating"
+            className={className}
             onAccept={onAccept}
             onCancel={onCancel}
             rate={rating?.rate}
