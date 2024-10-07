@@ -30,7 +30,9 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: [ 'react', 'i18next', 'react-hooks', 'unused-imports'],
+    plugins: [
+        'react', 'i18next', 'react-hooks', 'unused-imports',
+    ],
     rules: {
         'unused-imports/no-unused-imports': 'error',
         'react/jsx-indent': [2, 4],

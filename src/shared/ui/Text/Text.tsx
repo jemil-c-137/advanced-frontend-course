@@ -52,9 +52,25 @@ export const Text = memo(
         const HeaderTag = mapSizeHeaderTag[size];
 
         return (
-            <div className={classNames('', {}, [className, cls[theme], cls[align], cls[size]])}>
-                {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>{title}</HeaderTag>}
-                {text && <p data-testid={`${dataTestId}.Text`} className={cls.text}>{text}</p>}
+            <div
+                className={classNames('', {}, [
+                    className,
+                    cls[theme],
+                    cls[align],
+                    cls[size],
+                ])}>
+                {title && (
+                    <HeaderTag
+                        data-testid={`${dataTestId}.Header`}
+                        className={cls.title}>
+                        {title}
+                    </HeaderTag>
+                )}
+                {text && (
+                    <p data-testid={`${dataTestId}.Text`} className={cls.text}>
+                        {text}
+                    </p>
+                )}
             </div>
         );
     },
