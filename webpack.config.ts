@@ -3,6 +3,16 @@ import webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildEnv, BuildMode, BuildPaths } from './config/build/types/config';
 
+function getApiUrl(mode: BuildMode, apiUrl?: string) {
+    if (apiUrl) return apiUrl;
+
+    if (mode === 'production') {
+        return '/api';
+    }
+
+    return 'http://localhost:8000';
+}
+
 export default (env: BuildEnv) => {
     const buildPaths: BuildPaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -16,7 +26,7 @@ export default (env: BuildEnv) => {
     const MODE: BuildMode = env?.mode || 'development';
     const isDev = MODE === 'development';
     const PORT = env?.port || 3000;
-    const apiUrl = env?.apiUrl || 'http://localhost:8000';
+    const apiUrl = getApiUrl(MODE, env?.apiUrl);
 
     const config: webpack.Configuration = buildWebpackConfig({
         mode: MODE,
