@@ -1417,12 +1417,20 @@
             "username": "admin",
             "password": "123",
             "avatar": "foobar.jpg",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCommentRatingEnabled": false
+            },
             "roles": ["ADMIN"]
         },
         {
             "id": "2",
             "username": "user",
             "password": "123",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCommentRatingEnabled": false
+            },
             "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
             "roles": ["USER"]
         },
@@ -1430,6 +1438,10 @@
             "id": "3",
             "username": "manager",
             "password": "123",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCommentRatingEnabled": false
+            },
             "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
             "roles": ["MANAGER"]
         },
@@ -1437,6 +1449,10 @@
             "id": "4",
             "username": "testuser",
             "password": "123",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCommentRatingEnabled": false
+            },
             "avatar": "https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png",
             "roles": ["ADMIN"]
         }
