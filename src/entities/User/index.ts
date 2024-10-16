@@ -4,6 +4,8 @@ import { getUserInited } from './model/selectors/getUserInited/getUserInited';
 import { UserSchema, User } from './model/types/user';
 import { isUserAdmin, isUserManager } from './model/selectors/getUserRoles/getUserRoles';
 
+export { useJsonSettingsByKey, useJsonSettings } from './model/selectors/jsonSettings';
+
 export {
     userReducer,
     userActions,
@@ -19,3 +21,5 @@ export type {
 };
 
 export { UserRole } from './model/constants/user';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+export { initAuthData } from './model/services/initAuthData';
